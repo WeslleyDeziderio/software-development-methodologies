@@ -5,11 +5,17 @@
 #include "../include/SenhaInvalidaException.hpp"
 
 int main(void) {
-    User *user = new User("usuario", "usuario123");
+    User *user = new User("usuario", "usuario321");
 
     std::cout << user->getLogin() << std::endl;
     std::cout << user->getPassword() << std::endl;
     
+    // try {
+    //     user->nameValidator("usu");
+    // } catch (InvalidLoginException e) {
+    //     std::cerr << "Erro: " << e.what() << std::endl;
+    // }
+
     delete user;
 
     return 0;

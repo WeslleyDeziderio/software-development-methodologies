@@ -2,6 +2,7 @@
 #define USERVALIDATOR_HPP
 
 #include <string>
+#include <iostream>
 
 class UserValidator {
 protected:

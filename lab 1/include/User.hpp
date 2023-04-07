@@ -2,8 +2,8 @@
 #define USER_HPP
 
 #include <string>
-
-class User {
+#include "../include/validator/UserValidator.hpp"
+class User : public UserValidator {
 protected:
     std::string login;
     std::string password;
