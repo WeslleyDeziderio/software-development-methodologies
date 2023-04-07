@@ -1,3 +1,10 @@
+[![author](https://img.shields.io/badge/author-NthnR-purple.svg)](https://github.com/NthnR)
+[![author](https://img.shields.io/badge/author-jvns2010-yellow.svg)](https://github.com/jvns2010)
+[![author](https://img.shields.io/badge/author-KenjiSato97-green.svg)](https://github.com/KenjiSato97)
+[![author](https://img.shields.io/badge/author-Thash9523b-blue.svg)](https://github.com/Thash9523b)
+[![author](https://img.shields.io/badge/author-WeslleyDeziderio-black.svg)](https://github.com/WeslleyDeziderio)
+[![](https://img.shields.io/badge/C++-cyan.svg)](https://en.cppreference.com/w/cpp/11)
+
 <h1>Laboratório 1 - Projeto</h1>
 
 <ol>
