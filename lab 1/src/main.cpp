@@ -6,11 +6,6 @@
 #include "../include/ManageUser.hpp"
 
 int main(void) {
-    // User *user = new User("usuario", "usuario123");
-
-    // std::cout << user->getLogin() << std::endl;
-    // std::cout << user->getPassword() << std::endl;
-
     ManageUser *menu = new ManageUser();
     menu->userMenu();
     

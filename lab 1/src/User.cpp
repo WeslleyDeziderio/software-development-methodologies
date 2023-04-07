@@ -1,4 +1,5 @@
 #include "../include/User.hpp"
+#include "../include/validator/UserValidator.hpp"
 
 User::User() {
     std::string login = "";
