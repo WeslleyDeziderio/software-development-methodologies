@@ -1,17 +1,20 @@
 #ifndef MANAGEUSER_HPP
 #define MANAGEUSER_HPP
+#include "../include/User.hpp"
 
 #include <string>
 #include <iostream>
+#include <vector>
 
 class ManageUser {
 protected:
-    std::string usr;
-    std::string pass;
+    std::vector<User> listOfUsers;
 public:
     ManageUser();
     ~ManageUser();
     void registerUser();
+    void setUserRegister(User aux);
+    void getQtdUserRegister();
     void editUser();
     void findUser();
     void listAllUsers();
