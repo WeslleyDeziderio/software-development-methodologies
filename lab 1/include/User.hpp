@@ -4,7 +4,7 @@
 #include <string>
 
 class User {
-private:
+protected:
     std::string login;
     std::string password;
 public:

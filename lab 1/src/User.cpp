@@ -2,7 +2,7 @@
 
 User::User() {
     std::string login = "";
-    std::string passowr = "";
+    std::string password = "";
 }
 
 User::User(std::string login, std::string password) {

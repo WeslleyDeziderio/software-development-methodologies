@@ -1,4 +1,4 @@
-#include "../include/UserValidator.hpp"
+#include "../include/validator/UserValidator.hpp"
 
 UserValidator::UserValidator() {
 }
