@@ -3,13 +3,13 @@
 
 #include <string>
 
-class userValidator {
+class UserValidator {
 protected:
     std::string usr;
     std::string pass;
 public:
-    userValidator();
-    ~userValidator();
+    UserValidator();
+    ~UserValidator();
     void nameValidator(std::string usr);
     void passValidator(std::string pass);
 };
