@@ -6,15 +6,13 @@
 
 int main(void) {
     User *user = new User("usuario", "usuario321");
+    User user1;
 
     std::cout << user->getLogin() << std::endl;
     std::cout << user->getPassword() << std::endl;
-    
-    // try {
-    //     user->nameValidator("usu");
-    // } catch (InvalidLoginException e) {
-    //     std::cerr << "Erro: " << e.what() << std::endl;
-    // }
+
+    user1.passValidator("1231111111111111111111111111");
+    user1.nameValidator("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
     delete user;
 

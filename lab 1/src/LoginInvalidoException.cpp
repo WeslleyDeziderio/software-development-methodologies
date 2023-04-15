@@ -1,10 +1,9 @@
 #include "../include/LoginInvalidoException.hpp"
 
-InvalidLoginException::InvalidLoginException() {
+InvalidLoginException::InvalidLoginException() throw(){
 }
 
-InvalidLoginException::~InvalidLoginException() {
-
+InvalidLoginException::~InvalidLoginException() throw(){
 }
 
 std::string InvalidLoginException::what() {

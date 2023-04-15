@@ -13,29 +13,21 @@ UserValidator::~UserValidator() {
 }
 
 void UserValidator::nameValidator(std::string usr) {
-    try {
-        usr.length() > TAMANHO_MAXIMO_LOGIN;
-    } catch (InvalidLoginException e) {
-        std::cerr << "Login com mais de 12 caracteres!" << e.what() << std::endl;
-    }
-
-    try {
-        usr.empty();
-    } catch (InvalidLoginException e) {
-        std::cerr << "Login Vazio!" << e.what() << std::endl;
+    if (int(usr.length()) > TAMANHO_MAXIMO_LOGIN) {
+        throw InvalidLoginException();
+    } 
+    else if (usr.empty()) {
+        throw InvalidLoginException();
     }
 }
 
 void UserValidator::passValidator(std::string pass) {
-    try {
-        int(pass.length()) > TAMANHO_MAXIMO_SENHA;
-    } catch (InvalidPasswordException e) {
-        std::cerr << "Senha com mais de 20 caracteres!" << e.what() << std::endl;
-    }
-
-    try {
-        int(pass.length()) < TAMANHO_MINIMO_SENHA;
-    } catch (InvalidPasswordException e) {
-        std::cerr << "Senha com menos de 8 caracteres!" << e.what() << std::endl;
-    }
+   if (pass.length() < TAMANHO_MINIMO_SENHA) {
+        std::cout << "1" << std::endl;
+        throw InvalidPasswordException();
+   }
+   else if (pass.length() > TAMANHO_MAXIMO_SENHA) {
+        std::cout << "2" << std::endl;
+        throw InvalidPasswordException();
+   }
 }
