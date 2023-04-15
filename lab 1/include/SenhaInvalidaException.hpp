@@ -4,14 +4,13 @@
 #include <string>
 #include <exception>
 
-class InvalidPasswordException : public std::exception{
+class InvalidPasswordException : public std::exception {
 protected:
-    std::string InvalidPasswordMessage = "Senha Inválida.";
+    std::string InvalidPasswordMessage = "Senha Inválida!";
 public:
-    InvalidPasswordException();
-    ~InvalidPasswordException();
+    InvalidPasswordException() throw();
+    ~InvalidPasswordException() throw();
     virtual std::string what();
 };
-
 
 #endif // INVALIDPASSWORDEXCEPTION_HPP

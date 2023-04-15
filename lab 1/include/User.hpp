@@ -4,7 +4,7 @@
 #include <string>
 #include "../include/validator/UserValidator.hpp"
 class User : public UserValidator {
-protected:
+private:
     std::string login;
     std::string password;
 public:

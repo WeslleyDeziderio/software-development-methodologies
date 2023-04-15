@@ -1,10 +1,10 @@
 #include "../include/SenhaInvalidaException.hpp"
 
-InvalidPasswordException::InvalidPasswordException() throw(){
+InvalidPasswordException::InvalidPasswordException() throw() {
 
 }
 
-InvalidPasswordException::~InvalidPasswordException() throw(){
+InvalidPasswordException::~InvalidPasswordException() throw() {
 
 }
 
