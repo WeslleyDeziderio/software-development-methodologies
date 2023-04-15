@@ -6,31 +6,31 @@ ManageUser::ManageUser() {
 ManageUser::~ManageUser() {
 }
 
-void registerUser(){
+void ManageUser::registerUser(){
 
 }
 
-void listAllUsers(){
+void ManageUser::listAllUsers(){
 
 }
 
-void deleteUser(){
+void ManageUser::deleteUser(){
 
 }
 
-void findUser(){
+void ManageUser::findUser(){
 
 }
 
-void editUser(){
+void ManageUser::editUser(){
 
 }
 
-void userMenu(){
+void ManageUser::userMenu(){
 
     int escolha;
 	while(1){
-			system("cls");
+			system("clear");
 			std::cout << "Cadastrar usuario - 1\n" << "Procurar usuario - 2\n" << "Listar usuarios - 3\n" 
                       << "Editar usuario - 4\n"    << "Deletar usuario - 5\n"  << std::endl;
 			std::cin >> escolha;
@@ -39,24 +39,24 @@ void userMenu(){
 			switch(escolha){
 				
 				case 1:
-					system("cls");
+					system("clear");
                     registerUser();
 					break;
 				case 2:
-					system("cls");
+					system("clear");
 					findUser();
 					break;
 				case 3:
-					system("cls");
+					system("clear");
 					listAllUsers();
 					system("pause");
 					break;
                 case 4:
-                    system("cls");
+                    system("clear");
                     editUser();
                     break;
                 case 5:
-                    system("cls");
+                    system("clear");
                     deleteUser();
                     break;
 				default:
