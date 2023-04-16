@@ -1,17 +1,47 @@
 #include "../include/ManageUser.hpp"
 
+
+ManageUser manageUser;
+
 ManageUser::ManageUser() {
 }
 
 ManageUser::~ManageUser() {
 }
 
-void ManageUser::registerUser(){
-
+void ManageUser::setUserRegister(User a) {
+    this->usersList.push_back(a);
 }
 
-void ManageUser::listAllUsers(){
+void ManageUser::getQtdUserRegister() {
+    int qtd = this->usersList.size();
 
+    if (qtd == 0) {
+        std::cout << "Não há usuários cadastrados!" << std::endl;
+    }
+
+    for (int i = 0; i < qtd; i++) {
+        std::cout << this->usersList[i].getLogin() << std::endl;
+    }
+   
+}
+
+void ManageUser::listAllUsers() {
+    manageUser.getQtdUserRegister();
+}
+
+void ManageUser::registerUser(){
+    std::string usrLogin;
+    std::string usrPass;
+
+    std::cout << "Insira seu login: ";
+    std::cin >> usrLogin;
+
+    std::cout << "Insira sua senha: ";
+    std::cin >> usrPass;
+
+    User a(usrLogin, usrPass);
+    manageUser.setUserRegister(a);
 }
 
 void ManageUser::deleteUser(){

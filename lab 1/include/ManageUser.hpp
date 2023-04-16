@@ -3,11 +3,13 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
+/* #include <hash> */
+#include "../include/User.hpp"
 
 class ManageUser {
 protected:
-    std::string usr;
-    std::string pass;
+    std::vector<User> usersList;
 public:
     ManageUser();
     ~ManageUser();
@@ -17,7 +19,8 @@ public:
     void listAllUsers();
     void deleteUser();
     void userMenu();
-
+    void setUserRegister(User a);
+    void getQtdUserRegister();
 };
 
 #endif //MANAGEUSER_HPP
