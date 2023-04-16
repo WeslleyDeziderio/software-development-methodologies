@@ -15,6 +15,7 @@ public:
     ~UserValidator();
     void nameValidator(std::string usr);
     void passValidator(std::string pass);
+    int countNumbers(std::string pass);
 };
 
 #endif // USERVALIDATOR_HPP

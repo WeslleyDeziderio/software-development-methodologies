@@ -6,6 +6,7 @@
 #define TAMANHO_MAXIMO_LOGIN 12
 #define TAMANHO_MINIMO_SENHA 8
 #define TAMANHO_MAXIMO_SENHA 20
+#define QTD_MINIMA_NUMEROS 2
 
 UserValidator::UserValidator() {
 }
@@ -28,13 +29,27 @@ void UserValidator::nameValidator(std::string usr) {
     }
 }
 
+int UserValidator::countNumbers(std::string pass) {
+    size_t count = 0;
+
+    for (std::string::size_type pos = 0; (pos = pass.find_first_of("0123456789", pos)) != std::string::npos; ++pos) {
+        count++;
+    }
+
+    return count;
+}
+
 void UserValidator::passValidator(std::string pass) {
-   if (pass.length() < TAMANHO_MINIMO_SENHA) {
+    if (pass.length() < TAMANHO_MINIMO_SENHA) {
         std::cout << "A senha deve possuir pelo menos 8(oito) caracteres!" << std::endl;
         throw InvalidPasswordException();
    }
-   else if (pass.length() > TAMANHO_MAXIMO_SENHA) {
+    else if (pass.length() > TAMANHO_MAXIMO_SENHA) {
         std::cout << "A senha deve possuir até 12(doze) caracteres!" << std::endl;
         throw InvalidPasswordException();
    }
+    else if (countNumbers(pass) < QTD_MINIMA_NUMEROS) {
+        std::cout << "A senha deve conter pelo menos 2(dois) números" << std::endl;
+        throw InvalidPasswordException();
+    }
 }
