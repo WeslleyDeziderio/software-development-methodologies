@@ -1,6 +1,7 @@
 #include "../../include/validator/UserValidator.hpp"
 #include "../../include/LoginInvalidoException.hpp"
 #include "../../include/SenhaInvalidaException.hpp"
+#include <algorithm>
 
 #define TAMANHO_MAXIMO_LOGIN 12
 #define TAMANHO_MINIMO_SENHA 8
@@ -19,6 +20,10 @@ void UserValidator::nameValidator(std::string usr) {
     } 
     else if (usr.empty()) {
         std::cout << "O login não pode ser vazio!" << std::endl;
+        throw InvalidLoginException();
+    }
+    else if (std::find_if(usr.begin(), usr.end(), (int(*)(int))std::isdigit) != usr.end()) {
+        std::cout << "O login não pode conter números!" << std::endl;
         throw InvalidLoginException();
     }
 }
