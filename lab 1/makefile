@@ -18,18 +18,18 @@ CXXFLAGS= -Wall
 all: $(PROJ_NAME)
 
 $(PROJ_NAME): $(OBJ)
-	@ echo 'Building binary using GCC linker: $@'
+	@ echo 'Building binary using G++ linker: $@'
 	$(CXX) $^ -o $@
 	@ echo 'Finished building binary: $@'
 	@ echo ' '
  
 ./objects/%.o: ./src/%.cpp ininclude/%.hpp
-	@ echo 'Building target using GCC compiler: $<'
+	@ echo 'Building target using G++ compiler: $<'
 	$(CXX) $< $(CXXFLAGS) -o $@
 	@ echo ' '
  
 ./objects/main.o: ./src/main.cpp $(HPP_SOURCE)
-	@ echo 'Building target using GCC compiler: $<'
+	@ echo 'Building target using G++ compiler: $<'
 	$(CXX) $< $(CXXFLAGS) -o $@
 	@ echo ' '
  
