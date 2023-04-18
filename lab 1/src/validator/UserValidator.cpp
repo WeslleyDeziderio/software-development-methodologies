@@ -15,16 +15,14 @@ UserValidator::~UserValidator() {
 }
 
 void UserValidator::nameValidator(std::string usr) {
-    if (int(usr.length()) > TAMANHO_MAXIMO_LOGIN) {
-        std::cout << "O login deve possuir até 20(vinte) caracteres!" << std::endl;
+    if (static_cast<int>(usr.length()) > TAMANHO_MAXIMO_LOGIN) {
+        std::cout << "\nO login deve possuir até 20(vinte) caracteres!" << std::endl;
         throw InvalidLoginException();
-    } 
-    else if (usr.empty()) {
-        std::cout << "O login não pode ser vazio!" << std::endl;
+    } else if (usr.empty()) {
+        std::cout << "\nO login não pode ser vazio!" << std::endl;
         throw InvalidLoginException();
-    }
-    else if (std::find_if(usr.begin(), usr.end(), (int(*)(int))std::isdigit) != usr.end()) {
-        std::cout << "O login não pode conter números!" << std::endl;
+    } else if (std::find_if(usr.begin(), usr.end(), (int(*)(int))std::isdigit) != usr.end()) {
+        std::cout << "\nO login não pode conter números!" << std::endl;
         throw InvalidLoginException();
     }
 }
@@ -41,15 +39,15 @@ int UserValidator::countNumbers(std::string pass) {
 
 void UserValidator::passValidator(std::string pass) {
     if (pass.length() < TAMANHO_MINIMO_SENHA) {
-        std::cout << "A senha deve possuir pelo menos 8(oito) caracteres!" << std::endl;
+        std::cout << "\nA senha deve possuir pelo menos 8(oito) caracteres!" << std::endl;
         throw InvalidPasswordException();
-   }
+    }
     else if (pass.length() > TAMANHO_MAXIMO_SENHA) {
-        std::cout << "A senha deve possuir até 12(doze) caracteres!" << std::endl;
+        std::cout << "\nA senha deve possuir até 12(doze) caracteres!" << std::endl;
         throw InvalidPasswordException();
-   }
+    }
     else if (countNumbers(pass) < QTD_MINIMA_NUMEROS) {
-        std::cout << "A senha deve conter pelo menos 2(dois) números" << std::endl;
+        std::cout << "\nA senha deve conter pelo menos 2(dois) números!" << std::endl;
         throw InvalidPasswordException();
     }
 }
