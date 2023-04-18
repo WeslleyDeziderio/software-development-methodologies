@@ -6,7 +6,7 @@
 
 class InvalidLoginException : public std::exception {
 protected:
-    std::string InvalidLoginMessage = "Login Inválido!";
+    std::string InvalidLoginMessage = "Login Inválido!\n";
 public:
     InvalidLoginException() throw();
     ~InvalidLoginException() throw();

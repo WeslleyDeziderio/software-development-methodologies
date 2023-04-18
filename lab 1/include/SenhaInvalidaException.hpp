@@ -6,7 +6,7 @@
 
 class InvalidPasswordException : public std::exception {
 protected:
-    std::string InvalidPasswordMessage = "Senha Inválida!";
+    std::string InvalidPasswordMessage = "Senha Inválida!\n";
 public:
     InvalidPasswordException() throw();
     ~InvalidPasswordException() throw();
