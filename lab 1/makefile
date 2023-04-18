@@ -13,7 +13,7 @@ OBJ=$(CPP_SOURCE:.c=.o)
 CXX=g++
 
 #compiler's flags
-CXXFLAGS= -Wall
+CXXFLAGS= -Wall -fsyntax-only
 
 all: $(PROJ_NAME)
 
