@@ -41,6 +41,29 @@ void ManageUser::registerUser(){
     std::cin >> usrPass;
 
     User a(usrLogin, usrPass);
+    a.setLogin(usrLogin);
+    a.setPassword(usrPass);
+
+    try {
+        a.nameValidator(a.getLogin());
+    }
+    catch (InvalidLoginException& e) {
+        std::cerr << "Erro: " << e.what() << std::endl;
+    }
+    catch (...) {
+        std::cerr << "Erro: " << std::endl;
+    }
+
+    try {
+        a.passValidator(a.getPassword());
+    }
+    catch (InvalidPasswordException& e) {
+        std::cerr << "Erro: " << e.what() << std::endl;
+    }
+    catch (...) {
+        std::cerr << "Erro: " << std::endl;
+    }
+
     manageUser.setUserRegister(a);
 }
 
@@ -57,36 +80,27 @@ void ManageUser::editUser(){
 }
 
 void ManageUser::userMenu(){
-
     int escolha;
 	while(1){
-			system("clear");
 			std::cout << "Cadastrar usuario - 1\n" << "Procurar usuario - 2\n" << "Listar usuarios - 3\n" 
                       << "Editar usuario - 4\n"    << "Deletar usuario - 5\n"  << std::endl;
 			std::cin >> escolha;
 
-			
-			switch(escolha){
-				
+			switch(escolha) {
 				case 1:
-					system("clear");
                     registerUser();
 					break;
 				case 2:
-					system("clear");
 					findUser();
 					break;
 				case 3:
-					system("clear");
 					listAllUsers();
-					system("pause");
+					system("read -p '\n\n\n\nAperte Enter para continuar' var");
 					break;
                 case 4:
-                    system("clear");
                     editUser();
                     break;
                 case 5:
-                    system("clear");
                     deleteUser();
                     break;
 				default:
