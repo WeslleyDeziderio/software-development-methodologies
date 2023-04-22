@@ -1,10 +1,10 @@
-PROJ_NAME=adminApp
+PROJ_NAME=adminProgram
 
 # .cpp files
-CPP_SOURCE=$(wildcard ./src/*.cpp ./src/validator/*.cpp)
+CPP_SOURCE=$(wildcard ./src/*.cpp ./src/validator/*.cpp ./src/exception/*.cpp)
 
 #.hpp files
-HPP_SOURCE=$(wildcard ./include/*.hpp)
+HPP_SOURCE=$(wildcard ./include/*.hpp ./include/validator/*.hpp ./include/exception/*.hpp)
 
 # Object files
 OBJ=$(CPP_SOURCE:.c=.o)
@@ -13,7 +13,7 @@ OBJ=$(CPP_SOURCE:.c=.o)
 CXX=g++
 
 #compiler's flags
-CXXFLAGS= -Wall -fsyntax-only
+CXXFLAGS= -Wall
 
 all: $(PROJ_NAME)
 
@@ -22,22 +22,22 @@ $(PROJ_NAME): $(OBJ)
 	$(CXX) $^ -o $@
 	@ echo 'Finished building binary: $@'
 	@ echo ' '
- 
+
 ./objects/%.o: ./src/%.cpp ininclude/%.hpp
 	@ echo 'Building target using G++ compiler: $<'
 	$(CXX) $< $(CXXFLAGS) -o $@
 	@ echo ' '
- 
+
 ./objects/main.o: ./src/main.cpp $(HPP_SOURCE)
 	@ echo 'Building target using G++ compiler: $<'
 	$(CXX) $< $(CXXFLAGS) -o $@
 	@ echo ' '
- 
+
 objFolder:
 	@ mkdir -p objects
- 
+
 clean:
 	@ $(RM) ./objects/*.o $(PROJ_NAME) *~
 	@ rmdir objects
- 
+
 .PHONY: all clean
