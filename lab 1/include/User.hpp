@@ -3,6 +3,7 @@
 
 #include <string>
 #include "../include/validator/UserValidator.hpp"
+
 class User : public UserValidator {
 private:
     std::string login;
@@ -11,10 +12,10 @@ public:
     User();
     User(std::string login, std::string password);
     ~User();
-    void setLogin(std::string login);
-    std::string getLogin();
-    void setPassword(std::string password);
-    std::string getPassword();
+    void setLogin(const std::string& login);
+    std::string getLogin() const;
+    void setPassword(const std::string& password);
+    std::string getPassword() const;
 };
 
-#endif // USER_HPP
+#endif //  USER_HPP

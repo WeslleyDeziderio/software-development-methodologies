@@ -1,31 +1,25 @@
 #include "../include/User.hpp"
 #include "../include/validator/UserValidator.hpp"
 
-User::User() {
-    std::string login = "";
-    std::string password = "";
-}
-
 User::User(std::string login, std::string password) {
+    setLogin(login);
+    setPassword(password);
+}
+
+User::~User() {}
+
+void User::setLogin(const std::string& login) {
     this->login = login;
-    this->password = password;
 }
 
-User::~User() {
-}
-
-void User::setLogin(std::string login) {
-    this->login = login;
-}
-
-std::string User::getLogin() {
+std::string User::getLogin() const {
     return login;
 }
 
-void User::setPassword(std::string password) {
+void User::setPassword(const std::string& password) {
     this->password = password;
 }
 
-std::string User::getPassword() {
+std::string User::getPassword() const {
     return password;
 }
