@@ -1,8 +1,8 @@
 #include <iostream>
 #include "../include/User.hpp"
 #include "../include/validator/UserValidator.hpp"
-#include "../include/LoginInvalidoException.hpp"
-#include "../include/SenhaInvalidaException.hpp"
+#include "../include/exception/LoginInvalidoException.hpp"
+#include "../include/exception/SenhaInvalidaException.hpp"
 #include "../include/ManageUser.hpp"
 
 int main(void) {
