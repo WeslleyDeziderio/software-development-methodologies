@@ -44,7 +44,7 @@ void ManageUser::registerUser() {
     a.setPassword(usrPass);
 
     try {
-        a.nameValidator(a.getLogin());
+        a.validateUsername(a.getLogin());
     }
     catch (InvalidLoginException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
@@ -56,7 +56,7 @@ void ManageUser::registerUser() {
     }
 
     try {
-        a.passValidator(a.getPassword());
+        a.validatePassword(a.getPassword());
     }
     catch (InvalidPasswordException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
