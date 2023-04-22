@@ -3,8 +3,8 @@
 
 #include <string>
 #include <iostream>
-#include "../../include/LoginInvalidoException.hpp"
-#include "../../include/SenhaInvalidaException.hpp"
+#include "../../include/exception/LoginInvalidoException.hpp"
+#include "../../include/exception/SenhaInvalidaException.hpp"
 
 class UserValidator : public InvalidLoginException, InvalidPasswordException {
 protected:
@@ -12,9 +12,9 @@ protected:
     std::string pass;
 public:
     UserValidator();
-    ~UserValidator();
-    void nameValidator(std::string usr);
-    void passValidator(std::string pass);
+    virtual ~UserValidator();
+    virtual void validateUsername(std::string usr);
+    virtual void validatePassword(std::string pass);
     int countNumbers(std::string pass);
 };
 

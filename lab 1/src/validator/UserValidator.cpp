@@ -1,6 +1,6 @@
 #include "../../include/validator/UserValidator.hpp"
-#include "../../include/LoginInvalidoException.hpp"
-#include "../../include/SenhaInvalidaException.hpp"
+#include "../../include/exception/LoginInvalidoException.hpp"
+#include "../../include/exception/SenhaInvalidaException.hpp"
 #include <algorithm>
 
 #define TAMANHO_MAXIMO_LOGIN 12
@@ -8,13 +8,11 @@
 #define TAMANHO_MAXIMO_SENHA 20
 #define QTD_MINIMA_NUMEROS 2
 
-UserValidator::UserValidator() {
-}
+UserValidator::UserValidator() {}
 
-UserValidator::~UserValidator() {
-}
+UserValidator::~UserValidator() {}
 
-void UserValidator::nameValidator(std::string usr) {
+void UserValidator::validateUsername(std::string usr) {
     if (static_cast<int>(usr.length()) > TAMANHO_MAXIMO_LOGIN) {
         std::cout << "\nO login deve possuir até 20(vinte) caracteres!" << std::endl;
         throw InvalidLoginException();
@@ -37,7 +35,7 @@ int UserValidator::countNumbers(std::string pass) {
     return count;
 }
 
-void UserValidator::passValidator(std::string pass) {
+void UserValidator::validatePassword(std::string pass) {
     if (pass.length() < TAMANHO_MINIMO_SENHA) {
         std::cout << "\nA senha deve possuir pelo menos 8(oito) caracteres!" << std::endl;
         throw InvalidPasswordException();
