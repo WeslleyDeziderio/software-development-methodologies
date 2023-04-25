@@ -1,5 +1,8 @@
 #include "../include/User.hpp"
 #include "../include/validator/UserValidator.hpp"
+#include "../include/validator/IUserValidator.hpp"
+
+User::User() {}
 
 User::User(std::string login, std::string password) {
     setLogin(login);

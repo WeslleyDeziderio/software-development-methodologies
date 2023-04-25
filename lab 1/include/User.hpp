@@ -3,7 +3,7 @@
 
 #include <string>
 #include "../include/validator/UserValidator.hpp"
-
+#include "../include/validator/IUserValidator.hpp"
 class User : public UserValidator {
 private:
     std::string login;

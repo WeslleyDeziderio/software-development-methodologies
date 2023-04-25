@@ -9,7 +9,7 @@ public:
     virtual std::string what() = 0;
 };
 
-class InvalidPasswordException : public PasswordException {
+class InvalidPasswordException : PasswordException {
 protected:
     std::string InvalidPasswordMessage = "Senha Inválida!\n";
 public:

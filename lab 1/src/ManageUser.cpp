@@ -38,10 +38,8 @@ void ManageUser::registerUser() {
 
     std::cout << "Insira sua senha: ";
     std::cin >> usrPass;
-
+    
     User a(usrLogin, usrPass);
-    a.setLogin(usrLogin);
-    a.setPassword(usrPass);
 
     try {
         a.validateUsername(a.getLogin());

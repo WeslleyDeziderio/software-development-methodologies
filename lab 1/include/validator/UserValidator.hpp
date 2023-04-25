@@ -5,6 +5,7 @@
 #include <iostream>
 #include "../../include/exception/LoginInvalidoException.hpp"
 #include "../../include/exception/SenhaInvalidaException.hpp"
+#include "../../include/validator/IUserValidator.hpp"
 
 class UserValidator : public InvalidLoginException, InvalidPasswordException {
 protected:
@@ -13,8 +14,8 @@ protected:
 public:
     UserValidator();
     virtual ~UserValidator();
-    virtual void validateUsername(std::string usr);
-    virtual void validatePassword(std::string pass);
+    void validateUsername(std::string usr);
+    void validatePassword(std::string pass);
     int countNumbers(std::string pass);
 };
 

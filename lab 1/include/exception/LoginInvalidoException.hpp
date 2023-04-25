@@ -3,6 +3,7 @@
 
 #include <string>
 #include <exception>
+
 class LoginException : public std::exception {
 public:
     virtual std::string what() = 0;

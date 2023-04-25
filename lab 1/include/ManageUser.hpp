@@ -7,7 +7,7 @@
 /* #include <hash> */
 #include "../include/User.hpp"
 
-class ManageUser {
+class ManageUser : public User {
 protected:
     std::vector<User> usersList;
 public:

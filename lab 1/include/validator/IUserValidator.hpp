@@ -2,11 +2,15 @@
 #define I_USER_VALIDATOR_HPP
 
 #include <string>
-
+#include "../../include/exception/LoginInvalidoException.hpp"
+#include "../../include/exception/SenhaInvalidaException.hpp"
 class IUserValidator {
 public:
+    IUserValidator();
     virtual ~IUserValidator();
-    virtual bool validateUser(const std::string& login, const std::string password) const = 0;
+    virtual void validateUsername(const std::string& usr) = 0;
+    virtual void validatePassword(const std::string& pass) = 0;
+    virtual int countNumbers(const std::string& pass) = 0;
 };
 
-#endif 
+#endif //  I_USER_VALIDATOR_HPP 

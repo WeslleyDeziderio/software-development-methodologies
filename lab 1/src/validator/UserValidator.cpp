@@ -1,4 +1,5 @@
 #include "../../include/validator/UserValidator.hpp"
+#include "../../include/validator/IUserValidator.hpp"
 #include "../../include/exception/LoginInvalidoException.hpp"
 #include "../../include/exception/SenhaInvalidaException.hpp"
 #include <algorithm>
@@ -28,8 +29,10 @@ void UserValidator::validateUsername(std::string usr) {
 int UserValidator::countNumbers(std::string pass) {
     size_t count = 0;
 
-    for (std::string::size_type pos = 0; (pos = pass.find_first_of("0123456789", pos)) != std::string::npos; ++pos) {
-        count++;
+    for (char c : pass) {
+        if (isdigit(c)) {
+            count++;
+        }
     }
 
     return count;
