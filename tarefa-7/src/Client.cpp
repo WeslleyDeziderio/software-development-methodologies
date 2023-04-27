@@ -22,7 +22,3 @@ void Client::showTapesAlugadas(){
         std::cout << "Alugada por " << it->getDiasAlugada() << " dias." <<std::endl;
     }
 }
-
-void Client::setTapesAlugadas(Rent& rent){
-    TapesAlugadas.push_back(rent);
-}

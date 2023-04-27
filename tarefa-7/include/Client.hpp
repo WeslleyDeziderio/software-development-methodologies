@@ -19,7 +19,7 @@ public:
   std::string getNome();
   void setNome(std::string nome);
   void showTapesAlugadas();
-  void setTapesAlugadas(Rent& rent);
+
 
 };
 
