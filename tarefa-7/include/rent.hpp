@@ -1,3 +1,6 @@
+#ifndef RENT_HPP
+#define RENT_HPP
+
 class Tape;
 
 class Rent {
@@ -17,3 +20,4 @@ public:
     }
 };
 
+#endif

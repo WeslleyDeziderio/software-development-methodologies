@@ -1,3 +1,6 @@
+#ifndef TAPE_HPP
+#define TAPE_HPP
+
 #include <string>
 
 class Tape {
@@ -25,3 +28,4 @@ private:
     int codigoDePreco;
 };
 
+#endif

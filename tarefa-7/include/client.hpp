@@ -1,5 +1,8 @@
+#ifndef CLIENT_HPP
+#define CLIENT_HPP
+
 #include <iostream>
-#include "tape.cpp"
+#include "tape.hpp"
 #include <vector>
 
 class Rent {
@@ -69,3 +72,5 @@ return resultado;
 
 }
 };
+
+#endif
