@@ -1,7 +1,8 @@
 #include "../include/Tape.hpp"
 
-Tape::Tape() {
-
+Tape::Tape(std::string titulo, int codigoDePreco){
+    this->titulo = titulo;
+    this->codigoDePreco = codigoDePreco;
 }
 
 Tape::~Tape() {

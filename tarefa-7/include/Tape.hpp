@@ -9,9 +9,8 @@ public:
     static const int LANCAMENTO = 1;
     static const int INFANTIL = 2;
 
-    Tape();
+    Tape(std::string titulo, int codigoDePreco);
     ~Tape();
-    Tape(std::string titulo, int codigoDePreco) : titulo(titulo), codigoDePreco(codigoDePreco) {}
 
     std::string getTitulo();
     int getCodigoDePreco();
