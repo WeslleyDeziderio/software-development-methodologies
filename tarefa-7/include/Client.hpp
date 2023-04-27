@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include "Tape.hpp"
-#include "Rent.hpp"
 #include <vector>
 
 class Rent {

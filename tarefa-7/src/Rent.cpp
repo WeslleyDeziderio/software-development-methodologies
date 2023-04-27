@@ -5,7 +5,7 @@ Rent::Rent(Tape* tape, int diasAlugada ){
     this->diasAlugada = diasAlugada;
     }
 
-Rent::~Rent() {
+Rent::~Rent(){
 }
 
 Tape* Rent::getTape(){
