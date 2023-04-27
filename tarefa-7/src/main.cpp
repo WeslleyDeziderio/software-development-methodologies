@@ -1,4 +1,4 @@
-#include "../include/client.hpp"
+#include "../include/Client.hpp"
 
 int main() {
     Client c1("Juliana");
