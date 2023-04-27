@@ -29,9 +29,9 @@ void Tape::setClassificacao(int classificacao){
     this->classificacao = classificacao;
 }
 
-void Tape::adicionaRent(Rent& rent){
-    TapesAlugadas.push_back(rent);
-}
+// void Tape::adicionaRent(Rent& rent){
+//     TapesAlugadas.push_back(rent);
+// }
 
 // std::string Tape::extrato(){
 //     const std::string fimDeLinha = "\n";

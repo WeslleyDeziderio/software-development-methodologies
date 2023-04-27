@@ -17,14 +17,12 @@ public:
     int getClassificacao();
     void setClassificacao(int classificacao);
 
-    void adicionaRent(Rent& rent);
-    std::string extrato();
 
 private:
     std::string titulo;
     int codigoDePreco;
     int classificacao;
-    std::list<Rent> TapesAlugadas;
+
 
 };
 
