@@ -2,7 +2,7 @@
 #define CLIENT_HPP
 
 #include <iostream>
-#include "tape.hpp"
+#include "Tape.hpp"
 #include <vector>
 
 class Rent {
@@ -15,9 +15,15 @@ int getDiasAlugada() const { return diasAlugada; }
 };
 
 class Client {
-std::string nome;
-std::vector<Rent> TapesAlugadas;
+
+protected:
+
+  std::string nome;
+  std::vector<Rent> TapesAlugadas;
+
 public:
+  Client();
+  ~Client();
 Client(const std::string& nome) : nome(nome) {}
 std::string getNome() const { return nome; }
 void adicionaRent(const Rent& rent) { TapesAlugadas.push_back(rent); }
