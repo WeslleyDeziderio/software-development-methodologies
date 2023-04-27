@@ -6,9 +6,6 @@ Rent::Rent(Client* client, Tape* tape, int diasAlugada){
     this->client = client;
 }
 
-Rent::Rent(){
-}
-
 Rent::~Rent(){
 }
 

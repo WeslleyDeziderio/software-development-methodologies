@@ -12,7 +12,6 @@ private:
 
 public:
 
-    Rent();
     Rent( Client* client, Tape* tape, int diasAlugada);
     ~Rent();
     Tape* getTape();
