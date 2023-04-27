@@ -1,9 +1,10 @@
 #include "../include/Rent.hpp"
 
-Rent::Rent(Tape* tape, int diasAlugada ){
+Rent::Rent(Client* client, Tape* tape, int diasAlugada){
     this->tape = tape;
     this->diasAlugada = diasAlugada;
-    }
+    this->client = client;
+}
 
 Rent::~Rent(){
 }
