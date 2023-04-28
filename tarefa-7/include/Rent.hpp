@@ -1,7 +1,7 @@
 #ifndef RENT_HPP
 #define RENT_HPP
-#include "Tape.hpp"
-#include "Client.hpp"
+
+#include <string>
 
 class Rent{
 
@@ -16,6 +16,10 @@ public:
     ~Rent();
     Tape* getTape();
     int getDiasAlugada();
+    int getValorAluguel();
+    int getValorFidelidade();
+    void setValorFidelidade(int valorFidelidade);
+    std::string getClient();
 
 };
 

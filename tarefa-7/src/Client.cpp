@@ -1,6 +1,6 @@
 #include "../include/Client.hpp"
 
-Client::Client(std::string nome) {
+Client::Client(std::string nome){
     this->nome = nome;
 }
 
@@ -15,10 +15,20 @@ void Client::setNome(std::string nome){
     this->nome = nome;
 }
 
-void Client::showTapesAlugadas(){
-    std::cout << "Tapes alugadas por " << nome << ":" << std::endl;
-    for (std::list<Rent>::iterator it = TapesAlugadas.begin(); it != TapesAlugadas.end(); ++it){
-        std::cout << "Titulo: " << it->getTape()->getTitulo() << std::endl;
-        std::cout << "Alugada por " << it->getDiasAlugada() << " dias." <<std::endl;
-    }
+int Client::getPontosDeFidelidade(){
+    return pontosDeFidelidade;
+}
+
+void Client::setValorFidelidade(int pontosDeFidelidade){
+    this->pontosDeFidelidade += pontosDeFidelidade;
+}
+
+std::string Client::extrato(){
+    std::string fimDeLinha = "\n";
+    std::string extrato;
+    extrato = "Registro de Alugueis de " + getNome() + fimDeLinha;
+
+    extrato += "Valor total devido: " + tapes->getValorTotal(getNome()) + fimDeLinha;
+    extrato += "Voce acumulou " + std::to_string(getPontosDeFidelidade()) + " pontos de fidelidade" + fimDeLinha;
+    return extrato;
 }

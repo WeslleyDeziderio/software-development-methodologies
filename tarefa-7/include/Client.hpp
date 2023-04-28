@@ -2,24 +2,24 @@
 #define CLIENT_HPP
 
 #include <iostream>
-#include "Rent.hpp"
-#include <list>
+#include "Tape.hpp"
+
 
 class Client {
 
 protected:
-
+  Tape *tapes;
   std::string nome;
-  std::list<Rent> TapesAlugadas;
-
+  int pontosDeFidelidade = 0;
 public:
   Client(std::string nome);
   ~Client();
 
   std::string getNome();
   void setNome(std::string nome);
-  void showTapesAlugadas();
-
+  void setValorFidelidade(int pontosDeFidelidade);
+  int getPontosDeFidelidade();
+  std::string extrato();
 
 };
 

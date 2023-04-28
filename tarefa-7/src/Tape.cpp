@@ -1,9 +1,12 @@
 #include "../include/Tape.hpp"
+#include "../include/ClassificationNormal.hpp"
+#include "../include/ClassificationLancamento.hpp"
+#include "../include/ClassificationInfantil.hpp"
 
-Tape::Tape(std::string titulo, int codigoDePreco, int classificacao){
+
+Tape::Tape(std::string titulo, int codigoDePreco){
     this->titulo = titulo;
-    this->codigoDePreco = codigoDePreco;
-    this->classificacao = classificacao;
+    setCodigoDePreco(codigoDePreco);
 }
 
 Tape::~Tape() {
@@ -14,24 +17,55 @@ std::string Tape::getTitulo(){
 }
 
 int Tape::getCodigoDePreco(){
-    return codigoDePreco;
-}
-
-int Tape::getClassificacao(){
-    return classificacao;
+    return classification->getCodigoPreco();
 }
 
 void Tape::setCodigoDePreco(int codigoDePreco){
-    this->codigoDePreco = codigoDePreco;
+    switch (codigoDePreco)
+    {
+    case Tape::NORMAL:
+        this->classification = new ClassificationNormal();
+        break;
+    case Tape::LANCAMENTO:
+        this->classification = new ClassificationLancamento();
+        break;
+    case Tape::INFANTIL:
+        this->classification = new ClassificationInfantil();
+        break;
+    default:
+        break;
+    }
 }
 
-void Tape::setClassificacao(int classificacao){
-    this->classificacao = classificacao;
+int Tape::getValorAluguel(int diasAlugada){
+    return classification->getValorAluguel(diasAlugada);
 }
 
-// void Tape::adicionaRent(Rent& rent){
-//     TapesAlugadas.push_back(rent);
-// }
+int Tape::getValorTotal( std::string cliente){
+
+    double valorTotal = 0.0;
+    std::list<Rent>::const_iterator alugueis = TapesAlugadas.begin();
+
+    while(alugueis != TapesAlugadas.end()) {
+        Rent cada = *alugueis;
+        if(cada.getClient() == cliente){
+        valorTotal += getValorAluguel(cada.getDiasAlugada());
+        }
+        alugueis++;
+    }
+
+    return valorTotal;
+}
+
+int Tape::getValorFidelidade( int diasAlugada){
+
+    int valorFidelidade = 1;
+
+    if (classification->getCodigoPreco() == Tape::LANCAMENTO &&  diasAlugada > 1) {
+        valorFidelidade += 1;
+    }
+    return valorFidelidade;
+}
 
 // std::string Tape::extrato(){
 //     const std::string fimDeLinha = "\n";
@@ -47,21 +81,21 @@ void Tape::setClassificacao(int classificacao){
 
 //     // determina valores para cada linha
 //     switch(cada.getTape().getCodigoDePreco()) {
-//     case Tape::NORMAL:
-//     valorCorrente += 2;
-//     if(cada.getDiasAlugada() > 2) {
-//         valorCorrente += (cada.getDiasAlugada() - 2) * 1.5;
-//     }
-//     break;
-//     case Tape::LANCAMENTO:
-//     valorCorrente += cada.getDiasAlugada() * 3;
-//     break;
-//     case Tape::INFANTIL:
-//     valorCorrente += 1.5;
-//     if(cada.getDiasAlugada() > 3) {
-//         valorCorrente += (cada.getDiasAlugada() - 3) * 1.5;
-//     }
-//     break;
+    //     case Tape::NORMAL:
+    //         valorCorrente += 2;
+    //         if(cada.getDiasAlugada() > 2) {
+    //             valorCorrente += (cada.getDiasAlugada() - 2) * 1.5;
+    //         }
+    //         break;
+    //     case Tape::LANCAMENTO:
+    //         valorCorrente += cada.getDiasAlugada() * 3;
+    //         break;
+    //     case Tape::INFANTIL:
+    //         valorCorrente += 1.5;
+    //         if(cada.getDiasAlugada() > 3) {
+    //             valorCorrente += (cada.getDiasAlugada() - 3) * 1.5;
+    //         }
+    //         break;
 //     } //switch
 //     // trata de pontos de alugador frequente
 //     pontosDeAlugadorFrequente++;
@@ -76,6 +110,7 @@ void Tape::setClassificacao(int classificacao){
 //     valorTotal += valorCorrente;
 //     ++alugueis;
 //     } // while
+
 //     // adiciona rodap�
 //     resultado += "Valor total devido: " + std::to_string(valorTotal) + fimDeLinha;
 //     resultado += "Voce acumulou " + std::to_string(pontosDeAlugadorFrequente) +

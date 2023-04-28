@@ -1,17 +1,37 @@
-// #include "../include/Client.hpp"
+#include "../include/Client.hpp"
 
-// int main() {
-//     Client c1("Juliana");
+int main(){
 
-//     c1.adicionaRent(Rent(Tape("O Exorcista", Tape::NORMAL), 3));
-//     c1.adicionaRent(Rent(Tape("Men in Black", Tape::NORMAL), 2));
-//     c1.adicionaRent(Rent(Tape("Jurassic Park III", Tape::LANCAMENTO), 3));
-//     c1.adicionaRent(Rent(Tape("Planeta dos Macacos", Tape::LANCAMENTO), 4));
-//     c1.adicionaRent(Rent(Tape("Pateta no Planeta dos Macacos", Tape::INFANTIL), 10));
-//     c1.adicionaRent(Rent(Tape("O Rei Leao", Tape::INFANTIL), 30));
+    Client* cliente1 = new Client("João");
+    Client* cliente2 = new Client("Maria");
 
-//     std::cout << c1.extrato() << std::endl;
+    // Criando objetos de Tape
+    Tape* tape1 = new Tape("O Exorcista", Tape::NORMAL);
+    Tape* tape2 = new Tape("Jurassic Park III", Tape::LANCAMENTO);
+    Tape* tape3 = new Tape("Planeta dos Macacos", Tape::LANCAMENTO);
+    Tape* tape4 = new Tape("Pateta no Planeta dos Macacos", Tape::INFANTIL);
+    Tape* tape5 = new Tape("O Rei Leao", Tape::INFANTIL);
+    Tape* tape6 = new Tape("Men in Black", Tape::NORMAL);
 
-//     return 0;
-// }
+    // Criando objeto de Rent
+    Rent* rent1 = new Rent(cliente1, tape1, 3);
+    Rent* rent2 = new Rent(cliente2, tape2, 3);
+    Rent* rent3 = new Rent(cliente1, tape3, 3);
+    Rent* rent4 = new Rent(cliente2, tape4, 10);
+    Rent* rent5 = new Rent(cliente1, tape5, 30);
+    Rent* rent6 = new Rent(cliente2, tape6, 2);
 
+    std::cout << cliente1->extrato() << std::endl;
+    std::cout << cliente2->extrato() << std::endl;
+
+    // Liberando memória
+    delete cliente1;
+    delete cliente2;
+    delete tape1;
+    delete tape2;
+    delete rent1;
+    delete rent2;
+
+    return 0;
+    
+}
