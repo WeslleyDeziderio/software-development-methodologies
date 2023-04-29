@@ -1,5 +1,9 @@
 #include "../include/ClassificationLancamento.hpp"
 
+ClassificationLancamento::ClassificationLancamento(){}
+
+ClassificationLancamento::~ClassificationLancamento(){}
+
 int ClassificationLancamento::getCodigoPreco(){
     return Tape::LANCAMENTO;
 }

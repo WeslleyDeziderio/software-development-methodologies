@@ -1,5 +1,9 @@
 #include "../include/ClassificationInfantil.hpp"
 
+ClassificationInfantil::ClassificationInfantil(){}
+
+ClassificationInfantil::~ClassificationInfantil(){}
+
 int ClassificationInfantil::getCodigoPreco() {
     return Tape::INFANTIL;
 }

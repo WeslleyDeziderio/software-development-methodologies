@@ -3,6 +3,11 @@
 
 #include <string>
 
+// Declarações adiantadas
+class Client;
+class Tape;
+class Classification;
+
 class Rent{
 
 private:

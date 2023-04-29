@@ -4,8 +4,10 @@
 
 class ClassificationInfantil : public Classification {
 
+public:
+    ClassificationInfantil();
+    virtual ~ClassificationInfantil();
     int getCodigoPreco()override;
-
     double getValorAluguel(int diasAlugada)override;
 
 };

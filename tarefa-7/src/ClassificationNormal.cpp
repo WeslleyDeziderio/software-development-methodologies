@@ -1,5 +1,9 @@
 #include "../include/ClassificationNormal.hpp"
 
+ClassificationNormal::ClassificationNormal(){}
+
+ClassificationNormal::~ClassificationNormal(){}
+
 int ClassificationNormal::getCodigoPreco() {
     return Tape::NORMAL;
 }

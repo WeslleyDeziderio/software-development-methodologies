@@ -4,6 +4,9 @@
 
 class ClassificationNormal : public Classification {
 
+public:
+    ClassificationNormal();
+    virtual ~ClassificationNormal();
     int getCodigoPreco()override;
     double getValorAluguel(int diasAlugada)override;
 

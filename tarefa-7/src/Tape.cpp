@@ -1,4 +1,7 @@
+#include "../include/Rent.hpp"
 #include "../include/Tape.hpp"
+#include "../include/Client.hpp"
+#include "../include/Classification.hpp"
 #include "../include/ClassificationNormal.hpp"
 #include "../include/ClassificationLancamento.hpp"
 #include "../include/ClassificationInfantil.hpp"
@@ -14,6 +17,10 @@ Tape::~Tape() {
 
 std::string Tape::getTitulo(){
     return titulo;
+}
+
+void Tape::setAluguel(Rent rent){
+    TapesAlugadas.push_back(rent);
 }
 
 int Tape::getCodigoDePreco(){

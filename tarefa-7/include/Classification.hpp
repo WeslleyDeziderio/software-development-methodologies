@@ -7,6 +7,9 @@ class Classification {
 public:
     virtual int getCodigoPreco() ;
     virtual double getValorAluguel(int diasAlugada);
+    virtual ~Classification();
+    Classification();
+    
 private:
     int diasAlugada;
 };

@@ -1,12 +1,16 @@
 #include "../include/Rent.hpp"
 #include "../include/Tape.hpp"
 #include "../include/Client.hpp"
+#include "../include/Classification.hpp"
 
 Rent::Rent(Client* client, Tape* tape, int diasAlugada){
     this->tape = tape;
     this->diasAlugada = diasAlugada;
     this->client = client;
     client->setValorFidelidade(tape->getValorFidelidade(diasAlugada));
+    
+    Rent aux(client, tape, diasAlugada);
+    tape->setAluguel(aux);
 }
 
 Rent::~Rent(){

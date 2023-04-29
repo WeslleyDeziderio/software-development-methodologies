@@ -1,9 +1,12 @@
 #ifndef CLIENT_HPP
 #define CLIENT_HPP
-
-#include <iostream>
 #include "Tape.hpp"
+#include <iostream>
 
+// Declarações adiantadas
+class Rent;
+class Tape;
+class Classification;
 
 class Client {
 

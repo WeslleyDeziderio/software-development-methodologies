@@ -1,4 +1,7 @@
 #include "../include/Client.hpp"
+#include "../include/Rent.hpp"
+#include "../include/Tape.hpp"
+#include "../include/Classification.hpp"
 
 Client::Client(std::string nome){
     this->nome = nome;

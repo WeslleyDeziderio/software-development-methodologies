@@ -1,10 +1,14 @@
 #ifndef TAPE_HPP
 #define TAPE_HPP
-#include "Rent.hpp"
-#include "Classification.hpp"
 
 #include <string>
 #include <list>
+
+// Declarações adiantadas
+class Rent;
+class Client;
+class Classification;
+
 
 class Tape {
 public:
@@ -21,6 +25,7 @@ public:
     std::string getTitulo();
     int getCodigoDePreco();
     void setCodigoDePreco(int codigoDePreco);
+    void setAluguel(Rent rent);
     int getValorAluguel(int diasAlugada);
     int getValorTotal(std::string cliente);
     int getValorFidelidade( int diasAlugados);
