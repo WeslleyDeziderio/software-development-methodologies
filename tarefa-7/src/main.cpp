@@ -8,12 +8,12 @@
 
 int main(){
 
-    Client* cliente1 = new Client("João");
-    Client* cliente2 = new Client("Maria");
+    Client cliente1("João");
+    Client cliente2("Maria");
 
     // Criando objetos de Tape
-    Tape* tape1 = new Tape("O Exorcista", Tape::NORMAL);
-    Tape* tape2 = new Tape("Jurassic Park III", Tape::LANCAMENTO);
+    Tape tape1("O Exorcista", Tape::NORMAL);
+    Tape tape2("Jurassic Park III", Tape::LANCAMENTO);
     Tape* tape3 = new Tape("Planeta dos Macacos", Tape::LANCAMENTO);
     Tape* tape4 = new Tape("Pateta no Planeta dos Macacos", Tape::INFANTIL);
     Tape* tape5 = new Tape("O Rei Leao", Tape::INFANTIL);
@@ -30,8 +30,8 @@ int main(){
     // Rent* rent5 = new Rent(cliente1, tape5, 30);
     // Rent* rent6 = new Rent(cliente2, tape6, 2);
 
-    std::cout << cliente1->extrato() << std::endl;
-    std::cout << cliente2->extrato() << std::endl;
+    std::cout << cliente1.extrato() << std::endl;
+    // std::cout << cliente2.extrato() << std::endl;
 
     // Liberando memória
     // delete cliente1;

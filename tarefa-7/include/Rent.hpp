@@ -17,13 +17,16 @@ private:
 
 public:
 
-    Rent( Client* client, Tape* tape, int diasAlugada);
+    Rent( Client client, Tape tape, int diasAlugada);
     ~Rent();
     Tape* getTape();
     int getDiasAlugada();
-    int getValorAluguel();
+    int getValorAluguel(int diasAlugada);
     int getValorFidelidade();
     void setValorFidelidade(int valorFidelidade);
+    void setClient(Client client);
+    void setTape(Tape tape);
+    void setDiasAlugada(int diasAlugada);
     std::string getClient();
 
 };

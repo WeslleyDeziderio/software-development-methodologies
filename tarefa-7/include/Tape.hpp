@@ -21,20 +21,23 @@ public:
     ~Tape();
 
     Classification* classification;
-    std::list<Rent> TapesAlugadas;
+    std::list<Rent*> TapesAlugadas;
     std::string getTitulo();
     int getCodigoDePreco();
     void setCodigoDePreco(int codigoDePreco);
-    void setAluguel(Rent rent);
+    void setAluguel(Rent* rent);
     int getValorAluguel(int diasAlugada);
     int getValorTotal(std::string cliente);
-    int getValorFidelidade( int diasAlugados);
+    int getValorFidelidade( int diasAlugada);
+    std::string extrato(Client* cliente);
 
 
 private:
     std::string titulo;
+    Client* client;
     int codigoDePreco;
     int classificacao;
+    int diasAlugada;
 
 
 };

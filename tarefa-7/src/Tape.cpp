@@ -19,7 +19,7 @@ std::string Tape::getTitulo(){
     return titulo;
 }
 
-void Tape::setAluguel(Rent rent){
+void Tape::setAluguel(Rent* rent){
     TapesAlugadas.push_back(rent);
 }
 
@@ -51,12 +51,13 @@ int Tape::getValorAluguel(int diasAlugada){
 int Tape::getValorTotal( std::string cliente){
 
     double valorTotal = 0.0;
-    std::list<Rent>::const_iterator alugueis = TapesAlugadas.begin();
+    std::list<Rent*>::const_iterator alugueis = TapesAlugadas.begin();
+
 
     while(alugueis != TapesAlugadas.end()) {
-        Rent cada = *alugueis;
-        if(cada.getClient() == cliente){
-        valorTotal += getValorAluguel(cada.getDiasAlugada());
+        Rent* cada = *alugueis;
+        if(cada->getClient() == cliente){
+        valorTotal += getValorAluguel(cada->getDiasAlugada());
         }
         alugueis++;
     }
@@ -73,6 +74,18 @@ int Tape::getValorFidelidade( int diasAlugada){
     }
     return valorFidelidade;
 }
+
+std::string Tape::extrato(Client* cliente){
+    std::string fimDeLinha = "\n";
+    std::string extrato;
+
+    extrato = "Registro de Alugueis de " + cliente->getNome() + fimDeLinha;
+    extrato += "Valor total devido: " + std::to_string(getValorTotal(cliente->getNome())) + fimDeLinha;
+    extrato += "Voce acumulou " + std::to_string(cliente->getPontosDeFidelidade()) + " pontos de fidelidade" + fimDeLinha;
+
+    return extrato;
+}
+
 
 // std::string Tape::extrato(){
 //     const std::string fimDeLinha = "\n";

@@ -11,7 +11,7 @@ class Classification;
 class Client {
 
 protected:
-  Tape *tapes;
+  std::list<Rent*> tapesAlugadas;
   std::string nome;
   int pontosDeFidelidade = 0;
 public:
@@ -21,8 +21,10 @@ public:
   std::string getNome();
   void setNome(std::string nome);
   void setValorFidelidade(int pontosDeFidelidade);
-  int getPontosDeFidelidade();
+  void setAluguel(Rent rent);
+  int getValorTotal();
   std::string extrato();
+  int getPontosDeFidelidade();
 
 };
 
