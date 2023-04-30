@@ -33,12 +33,12 @@ void Client::setAluguel(Rent rent){
 int Client::getValorTotal(){
 
     double valorTotal = 0.0;
-    std::list<Rent*>::const_iterator alugueis = tapesAlugadas.begin();
+    std::list<Rent>::const_iterator alugueis = tapesAlugadas.begin();
 
 
     while(alugueis != tapesAlugadas.end()) {
-        Rent* cada = *alugueis;
-        valorTotal += cada->getValorAluguel(cada->getDiasAlugada());
+        Rent cada = *alugueis;
+        valorTotal += cada.getValorAluguel(cada.getDiasAlugada());
         alugueis++;
     }
 

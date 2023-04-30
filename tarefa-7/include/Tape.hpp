@@ -29,12 +29,10 @@ public:
     int getValorAluguel(int diasAlugada);
     int getValorTotal(std::string cliente);
     int getValorFidelidade( int diasAlugada);
-    std::string extrato(Client* cliente);
 
 
 private:
     std::string titulo;
-    Client* client;
     int codigoDePreco;
     int classificacao;
     int diasAlugada;

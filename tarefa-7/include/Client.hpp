@@ -11,7 +11,7 @@ class Classification;
 class Client {
 
 protected:
-  std::list<Rent*> tapesAlugadas;
+  std::list<Rent> tapesAlugadas;
   std::string nome;
   int pontosDeFidelidade = 0;
 public:

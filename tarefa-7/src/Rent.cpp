@@ -3,14 +3,14 @@
 #include "../include/Client.hpp"
 #include "../include/Classification.hpp"
 
-Rent::Rent(Client client, Tape tape, int diasAlugada){
-    this->tape = &tape;
+Rent::Rent(Client* client, Tape* tape, int diasAlugada){
+    this->tape = tape;
     this->diasAlugada = diasAlugada;
-    this->client = &client;
-    this->client->setValorFidelidade(tape.getValorFidelidade(diasAlugada));
+    this->client = client;
+    this->client->setValorFidelidade(tape->getValorFidelidade(diasAlugada));
     Rent aux = *this;
-    std::cout << "aux: " << aux.getTape()->getTitulo() << std::endl;
-    this->client->setAluguel(&aux);
+    client->setAluguel(aux);
+    client->setValorFidelidade(tape->getValorFidelidade(diasAlugada));
 }
 
 Rent::~Rent(){
@@ -39,14 +39,6 @@ int Rent::getValorFidelidade(){
 
 std::string Rent::getClient(){
     return client->getNome();
-}
-
-void Rent::setClient(Client client){
-    this->client = &client;
-}
-
-void Rent::setTape(Tape tape){
-    this->tape = &tape;
 }
 
 void Rent::setDiasAlugada(int diasAlugada){
