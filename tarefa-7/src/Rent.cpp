@@ -7,10 +7,17 @@ Rent::Rent(Client* client, Tape* tape, int diasAlugada){
     this->tape = tape;
     this->diasAlugada = diasAlugada;
     this->client = client;
+<<<<<<< HEAD
     client->setValorFidelidade(tape->getValorFidelidade(diasAlugada));
     
     Rent aux(client, tape, diasAlugada);
     tape->setAluguel(aux);
+=======
+    this->client->setValorFidelidade(tape->getValorFidelidade(diasAlugada));
+    Rent aux = *this;
+    client->setAluguel(aux);
+    client->setValorFidelidade(tape->getValorFidelidade(diasAlugada));
+>>>>>>> 4673e5820df6a71f0f08e72fe19a465a5f5ddec2
 }
 
 Rent::~Rent(){
@@ -25,7 +32,11 @@ int Rent::getDiasAlugada(){
 
 }
 
+<<<<<<< HEAD
 int Rent::getValorAluguel(){
+=======
+int Rent::getValorAluguel(int diasAlugada){
+>>>>>>> 4673e5820df6a71f0f08e72fe19a465a5f5ddec2
     return tape->getValorAluguel(diasAlugada);
 }
 
@@ -39,4 +50,11 @@ int Rent::getValorFidelidade(){
 
 std::string Rent::getClient(){
     return client->getNome();
+<<<<<<< HEAD
+=======
+}
+
+void Rent::setDiasAlugada(int diasAlugada){
+    this->diasAlugada = diasAlugada;
+>>>>>>> 4673e5820df6a71f0f08e72fe19a465a5f5ddec2
 }

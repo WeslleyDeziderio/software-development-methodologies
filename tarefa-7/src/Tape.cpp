@@ -19,7 +19,11 @@ std::string Tape::getTitulo(){
     return titulo;
 }
 
+<<<<<<< HEAD
 void Tape::setAluguel(Rent rent){
+=======
+void Tape::setAluguel(Rent* rent){
+>>>>>>> 4673e5820df6a71f0f08e72fe19a465a5f5ddec2
     TapesAlugadas.push_back(rent);
 }
 
@@ -51,12 +55,22 @@ int Tape::getValorAluguel(int diasAlugada){
 int Tape::getValorTotal( std::string cliente){
 
     double valorTotal = 0.0;
+<<<<<<< HEAD
     std::list<Rent>::const_iterator alugueis = TapesAlugadas.begin();
 
     while(alugueis != TapesAlugadas.end()) {
         Rent cada = *alugueis;
         if(cada.getClient() == cliente){
         valorTotal += getValorAluguel(cada.getDiasAlugada());
+=======
+    std::list<Rent*>::const_iterator alugueis = TapesAlugadas.begin();
+
+
+    while(alugueis != TapesAlugadas.end()) {
+        Rent* cada = *alugueis;
+        if(cada->getClient() == cliente){
+        valorTotal += getValorAluguel(cada->getDiasAlugada());
+>>>>>>> 4673e5820df6a71f0f08e72fe19a465a5f5ddec2
         }
         alugueis++;
     }
@@ -74,6 +88,7 @@ int Tape::getValorFidelidade( int diasAlugada){
     return valorFidelidade;
 }
 
+<<<<<<< HEAD
 // std::string Tape::extrato(){
 //     const std::string fimDeLinha = "\n";
 //     double valorTotal = 0.0;
@@ -125,3 +140,5 @@ int Tape::getValorFidelidade( int diasAlugada){
 //     return resultado;
 
 // }
+=======
+>>>>>>> 4673e5820df6a71f0f08e72fe19a465a5f5ddec2
