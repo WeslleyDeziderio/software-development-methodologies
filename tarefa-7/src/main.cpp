@@ -20,7 +20,6 @@ int main(){
     Tape* tape6 = new Tape("Men in Black", Tape::NORMAL);
 
     // Criando objeto de Rent
-
     Rent* rent1 = new Rent(cliente1, tape1, 3);
     Rent* rent2 = new Rent(cliente2, tape2, 3);
     Rent* rent3 = new Rent(cliente1, tape3, 3);
