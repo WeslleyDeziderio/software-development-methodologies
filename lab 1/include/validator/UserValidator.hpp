@@ -6,11 +6,7 @@
 #include "../../include/exception/LoginInvalidoException.hpp"
 #include "../../include/exception/SenhaInvalidaException.hpp"
 #include "../../include/validator/IUserValidator.hpp"
-
-class InvalidLoginException;
-class InvalidPasswordException;
-
-class UserValidator {
+class UserValidator : public InvalidLoginException, public InvalidPasswordException {
 protected:
     std::string usr;
     std::string pass;
