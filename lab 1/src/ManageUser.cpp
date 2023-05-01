@@ -79,8 +79,8 @@ void ManageUser::userMenu() {
     int escolha;
     int flag = 1;
 	while(flag) {
-			std::cout << "Cadastrar usuario - 1\n" << "Procurar usuario - 2\n" << "Listar usuarios - 3\n" 
-                      << "Editar usuario - 4\n"    << "Deletar usuario - 5\n"  << std::endl;
+			std::cout << "\nCadastrar usuário - 1\n" << "Procurar usuário - 2\n" << "Listar usuários - 3\n" 
+                      << "Editar usuário - 4\n"    << "Deletar usuário - 5\n"  << std::endl;
 	        std::cin >> escolha;
 
 			switch(escolha) {
@@ -105,7 +105,7 @@ void ManageUser::userMenu() {
 					flag = 0;
 					break;
 				default:
-                    std::cout << "Essa entrada não é valida, tente novamente!" << std::endl;
+                    std::cout << "A entrada não é valida por favor, tente novamente!" << std::endl;
                     flag = 0;
 		}
 	}
