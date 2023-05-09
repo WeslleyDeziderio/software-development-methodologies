@@ -13,8 +13,8 @@ OBJ=$(CPP_SOURCE:.c=.o)
 CXX=g++
 
 #compiler's flags
-CXXFLAGS= -Wall
-
+CXXFLAGS= -Wall -Wextra --std=c++11 -g
+		
 all: $(PROJ_NAME)
 
 $(PROJ_NAME): $(OBJ)
