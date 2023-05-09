@@ -80,7 +80,7 @@ void ManageUser::userMenu() {
     int flag = 1;
 	while(flag) {
 			std::cout << "\nCadastrar usuário - 1\n" << "Procurar usuário - 2\n" << "Listar usuários - 3\n" 
-                      << "Editar usuário - 4\n"    << "Deletar usuário - 5\n"  << std::endl;
+                      << "Editar usuário - 4\n"    << "Deletar usuário - 5\n"  << "Sair - 6" << std::endl;
 	        std::cin >> escolha;
 
 			switch(escolha) {
