@@ -47,10 +47,12 @@ void ManageUser::registerUser() {
     }
     catch (InvalidLoginException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
+        system("read -p '\n\n\n\nAperte Enter para continuar' var");
         manageUser.userMenu();
     }
     catch (...) {
         std::cerr << "Erro: " << std::endl;
+        system("read -p '\n\n\n\nAperte Enter para continuar' var");
         manageUser.userMenu();
     }
 
@@ -59,10 +61,12 @@ void ManageUser::registerUser() {
     }
     catch (InvalidPasswordException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
+        system("read -p '\n\n\n\nAperte Enter para continuar' var");
         manageUser.userMenu();
     }
     catch (...) {
         std::cerr << "Erro: " << std::endl;
+        system("read -p '\n\n\n\nAperte Enter para continuar' var");
         manageUser.userMenu();
     }
 
@@ -79,18 +83,22 @@ void ManageUser::userMenu() {
     int escolha;
     int flag = 1;
 	while(flag) {
-			std::cout << "\nCadastrar usuário - 1\n" << "Procurar usuário - 2\n" << "Listar usuários - 3\n" 
-                      << "Editar usuário - 4\n"    << "Deletar usuário - 5\n"  << "Sair - 6" << std::endl;
-	        std::cin >> escolha;
+        system("clear");
+        std::cout << "\nCadastrar usuário - 1\n" << "Procurar usuário - 2\n" << "Listar usuários - 3\n" 
+                    << "Editar usuário - 4\n"    << "Deletar usuário - 5\n"  << "Sair - 6" << std::endl;
+        std::cin >> escolha;
 
 			switch(escolha) {
 				case 1:
+                    system("clear");
                     registerUser();
 					break;
 				case 2:
+                    system("clear");
 					findUser();
 					break;
 				case 3:
+                    system("clear");
 					listAllUsers();
 					system("read -p '\n\n\n\nAperte Enter para continuar' var");
 					break;
