@@ -33,4 +33,4 @@ Senha:
 
 
 No terminal, na raíz do projeto, use o comando `make` para compilar;
-Então, rode com `./adminProgram`
+Então, rode com `./crud`
