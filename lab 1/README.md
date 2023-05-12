@@ -30,4 +30,7 @@ Senha:
 </ol>
 
 <h1>Execução do projeto</h1>
-No terminal, na raíz do projeto, utilizar o comando `$ make`
+
+
+No terminal, na raíz do projeto, use o comando `make` para compilar;
+Então, rode com `./adminProgram`
