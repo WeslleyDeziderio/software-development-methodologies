@@ -1,4 +1,4 @@
-PROJ_NAME=adminProgram
+PROJ_NAME=crud
 
 #.hpp files
 HPP_SOURCE=$(wildcard ./include/*.hpp ./include/validator/*.hpp ./include/exception/*.hpp ./include/model/*.hpp ./include/controller/*.hpp)
@@ -14,7 +14,7 @@ OBJ=$(CPP_SOURCE:.c=.o)
 CXX=g++
 
 #compiler's flags
-CXXFLAGS= -Wall -Wextra --std=c++11 -g
+CXXFLAGS= -Wall -Wextra --std=c++20 -g
 		
 all: $(PROJ_NAME)
 
