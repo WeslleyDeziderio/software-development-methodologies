@@ -2,7 +2,9 @@
 
 Bike::Bike() {}
 
-Bike::~Bike() {}
+Bike::~Bike() {
+    delete this;
+}
 
 Bike::Bike(std::string& type, double price){
     setBikePrice(price);
