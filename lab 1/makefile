@@ -1,10 +1,11 @@
 PROJ_NAME=adminProgram
 
-# .cpp files
-CPP_SOURCE=$(wildcard ./src/*.cpp ./src/validator/*.cpp ./src/exception/*.cpp)
-
 #.hpp files
-HPP_SOURCE=$(wildcard ./include/*.hpp ./include/validator/*.hpp ./include/exception/*.hpp)
+HPP_SOURCE=$(wildcard ./include/*.hpp ./include/validator/*.hpp ./include/exception/*.hpp ./include/model/*.hpp ./include/controller/*.hpp)
+
+# .cpp files
+CPP_SOURCE=$(wildcard ./src/*.cpp ./src/validator/*.cpp ./src/exception/*.cpp ./src/model/*.cpp ./src/controller/*.cpp)
+
 
 # Object files
 OBJ=$(CPP_SOURCE:.c=.o)

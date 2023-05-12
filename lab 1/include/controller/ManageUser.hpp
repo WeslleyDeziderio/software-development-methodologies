@@ -1,6 +1,7 @@
 #ifndef MANAGEUSER_HPP
 #define MANAGEUSER_HPP
-#include "../include/User.hpp"
+
+#include "../../include/model/User.hpp"
 
 #include <string>
 #include <iostream>

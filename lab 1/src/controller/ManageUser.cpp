@@ -1,14 +1,11 @@
-#include "../include/ManageUser.hpp"
+#include "../../include/controller/ManageUser.hpp"
 #include <cstdlib> 
 
 ManageUser manageUser;
 
-ManageUser::ManageUser() {
+ManageUser::ManageUser() {}
 
-}
-
-ManageUser::~ManageUser() {
-}
+ManageUser::~ManageUser() {}
 
 void ManageUser::setUserRegister(User a) {
     this->usersList.push_back(a);
@@ -73,7 +70,9 @@ void ManageUser::registerUser() {
     manageUser.setUserRegister(a);
 }
 
-void ManageUser::deleteUser() {}
+void ManageUser::deleteUser() {
+    this->usersList.pop_back();
+}
 
 void ManageUser::findUser() {}
 
