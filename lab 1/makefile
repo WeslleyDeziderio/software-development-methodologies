@@ -1,10 +1,10 @@
 PROJ_NAME=crud
 
 #.hpp files
-HPP_SOURCE=$(wildcard ./include/*.hpp ./include/validator/*.hpp ./include/exception/*.hpp ./include/model/*.hpp ./include/controller/*.hpp)
+HPP_SOURCE=$(wildcard ./include/*.hpp ./include/utils/*.hpp ./include/exception/*.hpp ./include/model/*.hpp ./include/controller/*.hpp)
 
 # .cpp files
-CPP_SOURCE=$(wildcard ./src/*.cpp ./src/validator/*.cpp ./src/exception/*.cpp ./src/model/*.cpp ./src/controller/*.cpp)
+CPP_SOURCE=$(wildcard ./src/*.cpp ./src/utils/*.cpp ./src/exception/*.cpp ./src/model/*.cpp ./src/controller/*.cpp)
 
 
 # Object files

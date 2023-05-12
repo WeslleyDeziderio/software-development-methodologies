@@ -1,8 +1,7 @@
-#include "../../include/validator/UserValidator.hpp"
-#include "../../include/validator/IUserValidator.hpp"
+#include "../../include/utils/UserValidator.hpp"
+#include "../../include/utils/IUserValidator.hpp"
 #include "../../include/exception/LoginInvalidoException.hpp"
 #include "../../include/exception/SenhaInvalidaException.hpp"
-#include <algorithm>
 
 #define TAMANHO_MAXIMO_LOGIN 12
 #define TAMANHO_MINIMO_SENHA 8

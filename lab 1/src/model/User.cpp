@@ -1,6 +1,6 @@
 #include "../../include/model/User.hpp"
-#include "../../include/validator/UserValidator.hpp"
-#include "../../include/validator/IUserValidator.hpp"
+#include "../../include/utils/UserValidator.hpp"
+#include "../../include/utils/IUserValidator.hpp"
 
 User::User() {}
 

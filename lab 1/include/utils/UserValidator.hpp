@@ -3,9 +3,11 @@
 
 #include <string>
 #include <iostream>
+#include <algorithm>
 #include "../../include/exception/LoginInvalidoException.hpp"
 #include "../../include/exception/SenhaInvalidaException.hpp"
-#include "../../include/validator/IUserValidator.hpp"
+#include "../../include/utils/IUserValidator.hpp"
+
 class UserValidator : public InvalidLoginException, public InvalidPasswordException {
 protected:
     std::string usr;

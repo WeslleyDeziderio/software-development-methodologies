@@ -1,4 +1,4 @@
-#include "../include/model/Bike.hpp"
+#include "../../include/model/Bike.hpp"
 
 Bike::Bike() {}
 

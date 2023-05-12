@@ -3,8 +3,7 @@
 
 #include <iostream>
 #include <string>
-
-class Bike{
+class Bike {
 private:
     std::string type;
     double price;
@@ -17,7 +16,6 @@ public:
     void setBikePrice(double price);
     std:: string getBikeType();
     double getBikePrice();
-
 };
 
 #endif // BIKE_HPP

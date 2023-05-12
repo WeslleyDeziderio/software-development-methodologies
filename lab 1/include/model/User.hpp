@@ -2,8 +2,8 @@
 #define USER_HPP
 
 #include <string>
-#include "../../include/validator/UserValidator.hpp"
-#include "../../include/validator/IUserValidator.hpp"
+#include "../../include/utils/UserValidator.hpp"
+#include "../../include/utils/IUserValidator.hpp"
 
 class User : public UserValidator {
 private:

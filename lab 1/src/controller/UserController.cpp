@@ -1,33 +1,32 @@
-#include "../../include/controller/ManageUser.hpp"
-#include <cstdlib> 
+#include "../../include/controller/UserController.hpp"
 
-ManageUser manageUser;
+UserController userController;
 
-ManageUser::ManageUser() {}
+UserController::UserController() {}
 
-ManageUser::~ManageUser() {}
+UserController::~UserController() {}
 
-void ManageUser::setUserRegister(User a) {
+void UserController::setUserRegister(User a) {
     this->usersList.push_back(a);
 }
 
-void ManageUser::getQtdUserRegister() {
-    int qtd = this->usersList.size();
+void UserController::getQtdUserRegister() {
+    unsigned long int qtd = this->usersList.size();
 
     if (qtd == 0) {
         std::cout << "Não há usuários cadastrados!" << std::endl;
     }
 
-    for (int i = 0; i < qtd; i++) {
+    for (unsigned long int i = 0; i < qtd; i++) {
         std::cout << this->usersList[i].getLogin() << std::endl;
     }
 }
 
-void ManageUser::listAllUsers() {
-    manageUser.getQtdUserRegister();
+void UserController::listAllUsers() {
+    userController.getQtdUserRegister();
 }
 
-void ManageUser::registerUser() {
+void UserController::registerUser() {
     std::string usrLogin;
     std::string usrPass;
 
@@ -45,12 +44,12 @@ void ManageUser::registerUser() {
     catch (InvalidLoginException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
         system("read -p '\n\n\n\nAperte Enter para continuar' var");
-        manageUser.userMenu();
+        userController.userMenu();
     }
     catch (...) {
         std::cerr << "Erro: " << std::endl;
         system("read -p '\n\n\n\nAperte Enter para continuar' var");
-        manageUser.userMenu();
+        userController.userMenu();
     }
 
     try {
@@ -59,26 +58,26 @@ void ManageUser::registerUser() {
     catch (InvalidPasswordException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
         system("read -p '\n\n\n\nAperte Enter para continuar' var");
-        manageUser.userMenu();
+        userController.userMenu();
     }
     catch (...) {
         std::cerr << "Erro: " << std::endl;
         system("read -p '\n\n\n\nAperte Enter para continuar' var");
-        manageUser.userMenu();
+        userController.userMenu();
     }
 
-    manageUser.setUserRegister(a);
+    userController.setUserRegister(a);
 }
 
-void ManageUser::deleteUser() {
+void UserController::deleteUser() {
     this->usersList.pop_back();
 }
 
-void ManageUser::findUser() {}
+void UserController::findUser() {}
 
-void ManageUser::editUser() {}
+void UserController::editUser() {}
 
-void ManageUser::userMenu() {
+void UserController::userMenu() {
     int escolha;
     int flag = 1;
 	while(flag) {

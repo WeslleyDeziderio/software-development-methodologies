@@ -1,4 +1,4 @@
-#include "../../include/validator/IUserValidator.hpp"
+#include "../../include/utils/IUserValidator.hpp"
 
 IUserValidator::IUserValidator() {}
 

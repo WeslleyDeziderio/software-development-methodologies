@@ -1,18 +1,21 @@
-#ifndef MANAGEUSER_HPP
-#define MANAGEUSER_HPP
+#ifndef USERCONTROLLER_HPP
+#define USERCONTROLLER_HPP
 
 #include "../../include/model/User.hpp"
 
 #include <string>
 #include <iostream>
 #include <vector>
+#include <list>
+#include <algorithm>
+#include <cstdlib> 
 
-class ManageUser : public User {
+class UserController : public User {
 protected:
     std::vector<User> usersList;
 public:
-    ManageUser();
-    ~ManageUser();
+    UserController();
+    virtual ~UserController();
     void registerUser();
     void setUserRegister(User aux);
     void getQtdUserRegister();
@@ -23,4 +26,4 @@ public:
     void userMenu();
 };
 
-#endif //MANAGEUSER_HPP
+#endif //  USERCONTROLLER_HPP
