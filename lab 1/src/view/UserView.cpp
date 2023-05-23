@@ -1,7 +1,9 @@
 #include "../../include/view/UserView.hpp"
-#include "../../include/controller/UserController.hpp"
+#include "../../include/controller/FacadeController.hpp"
 
-void UserView::showMenu() {
+
+inline void UserView::showMenu(){
+    FacadeController facade_instance;
     int escolha = 0;
     bool flag = true;
     while (flag) {
@@ -21,26 +23,26 @@ void UserView::showMenu() {
 
         switch (escolha) {
             case 1:
-                registerUser();
+                facade_instance.registerUser();
                 break;
             case 2:
-                findUser();
+                // findUser();
                 break;
             case 3:
-                listAllUsers();
-                std::cout << "\nPressione Enter para continuar...\n";
+                facade_instance.getQtdUserRegister();
+                // std::cout << "\nPressione Enter para continuar...\n";
                 // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::cin.get();
                 break;
             case 4:
-                editUser();
+                // editUser();
                 break;
             case 5:
                 std::cout << "Tem certeza que deseja excluir um usuário? (s/n): ";
                 char confirmacao;
                 std::cin >> confirmacao;
                 if (confirmacao == 's' || confirmacao == 'S') {
-                    deleteUser();
+                    // deleteUser();
                 }
                 break;
             case 6:
