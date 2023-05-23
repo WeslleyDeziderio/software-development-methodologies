@@ -2,6 +2,7 @@
 #define MANAGER_HPP
 
 #include "User.hpp"
+#include "Bike.hpp"
 
 class Manager : public User {
 private:

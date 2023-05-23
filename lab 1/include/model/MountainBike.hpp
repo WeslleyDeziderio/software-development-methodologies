@@ -4,7 +4,8 @@
 #include "Bike.hpp"
 #include <iostream>
 
-class MountainBike {
+class MountainBike : public Bike {
+public:
     void Rent();
     friend class Bike;
 };

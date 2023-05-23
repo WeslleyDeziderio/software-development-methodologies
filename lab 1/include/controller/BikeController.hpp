@@ -6,25 +6,21 @@
 #include <string>
 
 #include "../model/Bike.hpp"
+#include "../model/UrbanBike.hpp"
+#include "../model/MountainBike.hpp"
 
-class ManageBike : public Bike{
-
+class ManageBike {
+private:
+    Bike* ptrBike;
 public:
     ManageBike();
-    ~ManageBike();
-//indices dos elementos
+    virtual ~ManageBike();
     void putBikeIds();
-
-
-//CRUD
-    void registBike();  //criar outro no Facade, nao precisa de exceptions
-    void findBike();    //facade devem ser iguais
-    void editBike();    //facade
-    void deleteBike();  //facade
-
+    void registBike(std::string type);
+    void findBike();
+    void editBike();
+    void deleteBike();  
     void listAllBikes();    
-    //facade devem ser iguais -> mudar mensagem para "cadastros não encontrados"
-
 
 };
 

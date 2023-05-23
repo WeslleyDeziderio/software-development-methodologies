@@ -8,6 +8,7 @@ FacadeController* FacadeController::instance = nullptr;
 
 FacadeController::FacadeController(){
    this->userController_ = new UserController(); 
+   this->manageBike_ = new ManageBike();
 }
 
 FacadeController* FacadeController::getInstance() {
@@ -64,4 +65,9 @@ void FacadeController::registerUser() {
     system("clear");
     this->userController_->registerUser();
     system("clear");
+}
+
+void FacadeController::registBike() {
+    std::string aux;
+    this->manageBike_->registBike(aux);
 }

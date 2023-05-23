@@ -4,6 +4,7 @@
 #include "../model/User.hpp"
 #include "../model/Bike.hpp"
 #include "../../include/controller/UserController.hpp"
+#include "../../include/controller/BikeController.hpp"
 #include <string>
 #include <iostream>
 #include <vector>
@@ -12,12 +13,12 @@ class FacadeController {
 protected:
 private:
     UserController* userController_;
+    ManageBike* manageBike_;
     static FacadeController* instance;
 
 public:
     FacadeController();
     static FacadeController* getInstance();
-
 
     void registerUser();
     void setEntityRegister(const User& user);
@@ -31,6 +32,7 @@ public:
     void deleteEntity(const Bike& bike);
     void findEntity(const Bike& bike);
     void listAllBikes();
+    void registBike();
 
 };
 #endif //  FacadeController_HPP

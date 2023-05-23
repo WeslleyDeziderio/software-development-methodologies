@@ -6,6 +6,8 @@ Bike::~Bike() {
     delete this;
 }
 
+void Bike::Rent() {}
+
 Bike::Bike(std::string& type, double price){
     setBikePrice(price);
     setBikeType(type);

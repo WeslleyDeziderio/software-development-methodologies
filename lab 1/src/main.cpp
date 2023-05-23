@@ -6,10 +6,15 @@
 // #include "../include/view/UserView.hpp"
 #include "view/UserView.cpp"
 #include "../include/controller/UserController.hpp"
+#include "../include/controller/BikeController.hpp"
 
 int main(void) {
     UserView userMenu;
     userMenu.showMenu();
     UserController userController;
+
+    ManageBike* manageBike = new ManageBike();
+    manageBike->registBike("urban");
+
     return 0;
 }
