@@ -16,7 +16,7 @@ void UserView::showMenu() {
         while (!(std::cin >> escolha)) {
             std::cout << "Entrada inválida, tente novamente: ";
             std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
 
         switch (escolha) {
@@ -29,7 +29,7 @@ void UserView::showMenu() {
             case 3:
                 listAllUsers();
                 std::cout << "\nPressione Enter para continuar...\n";
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::cin.get();
                 break;
             case 4:
