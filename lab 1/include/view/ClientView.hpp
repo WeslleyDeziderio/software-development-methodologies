@@ -1,5 +1,5 @@
-#ifndef CLIENTVIEW.HPP
-#define CLIENTVIEW.HPP
+#ifndef CLIENTVIEW_HPP
+#define CLIENTVIEW_HPP
 
 #include "../../include/view/UserView.hpp"
 
