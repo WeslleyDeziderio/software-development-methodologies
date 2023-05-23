@@ -3,7 +3,8 @@
 
 #include "../../include/controller/UserController.hpp"
 
-class UserView : public UserController {
+class UserView{
+
 public:
     void showMenu();
 };

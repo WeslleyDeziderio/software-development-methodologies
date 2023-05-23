@@ -2,7 +2,7 @@
 #include "../../include/controller/UserController.hpp"
 
 UserController userController;
-UserView userMenu_;
+
 
 UserController::UserController() {}
 
@@ -25,12 +25,12 @@ void UserController::registerUser() {
     catch (InvalidLoginException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
         system("read -p '\n\n\n\nAperte Enter para continuar' var");
-        userMenu_.showMenu();
+
     }
     catch (...) {
         std::cerr << "Erro: " << std::endl;
         system("read -p '\n\n\n\nAperte Enter para continuar' var");
-        userMenu_.showMenu();
+
     }
 
     try {
@@ -40,12 +40,12 @@ void UserController::registerUser() {
     catch (InvalidPasswordException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
         system("read -p '\n\n\n\nAperte Enter para continuar' var");
-        userMenu_.showMenu();
+
     }
     catch (...) {
         std::cerr << "Erro: " << std::endl;
         system("read -p '\n\n\n\nAperte Enter para continuar' var");
-        userMenu_.showMenu();
+
     }
 }
 
