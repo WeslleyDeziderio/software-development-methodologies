@@ -3,23 +3,22 @@
 
 #include "../model/User.hpp"
 #include "../model/Bike.hpp"
+#include "../../include/controller/UserController.hpp"
 #include <string>
 #include <iostream>
 #include <vector>
 
 class FacadeController {
 protected:
-    std::vector<User> usersList;
-    std::vector<Bike> bikesList;   
 private:
+    UserController* userController_;
     static FacadeController* instance;
 
-    FacadeController();
-
 public:
+    FacadeController();
     static FacadeController* getInstance();
 
-    // Métodos para CRUD de usuários
+
     void registerUser();
     void setEntityRegister(const User& user);
     void editEntity();
@@ -27,7 +26,6 @@ public:
     void findEntity();
     void listAllUsers();
     void getQtdUserRegister();
-    // Métodos para CRUD de bicicletas
     void setEntityRegister(const Bike& bike);
     void editEntity(const Bike& bike);
     void deleteEntity(const Bike& bike);
