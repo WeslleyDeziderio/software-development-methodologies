@@ -20,13 +20,13 @@ protected:
 public:
     UserController();
     virtual ~UserController();
-    void registerUser();
-    void setUserRegister(User aux);
-    void getQtdUserRegister();
-    void editUser();
-    void findUser();
-    void listAllUsers();
-    void deleteUser();
+    virtual void registerUser();
+    virtual void setUserRegister(User aux);
+    virtual void getQtdUserRegister();
+    virtual void editUser();
+    virtual void findUser();
+    virtual void listAllUsers();
+    virtual void deleteUser();
 };
 
 #endif //  USERCONTROLLER_HPP
