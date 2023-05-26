@@ -8,6 +8,7 @@ FacadeController* FacadeController::instance = nullptr;
 
 FacadeController::FacadeController(){
    this->userController_ = new UserController(); 
+   this->clientController_ = new ClientController();
    this->manageBike_ = new ManageBike();
 }
 
@@ -31,6 +32,18 @@ void FacadeController::findEntity() {
 }
 
 void FacadeController::listAllUsers() {
+    system("clear");
+    this->userController_->listAllUsers();
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+    system("clear");
+
+}
+
+void FacadeController::listAllClients() {
+    system("clear");
+    this->clientController_->listAllUsers();
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+    system("clear");
 
 }
 
@@ -54,16 +67,15 @@ void FacadeController::listAllBikes() {
 
 }
 
-void FacadeController::getQtdUserRegister() {
-    system("clear");
-    this->userController_->listAllUsers();
-    system("read -p '\n\n\n\nAperte Enter para continuar' var");
-    system("clear");
-}
-
 void FacadeController::registerUser() {
     system("clear");
     this->userController_->registerUser();
+    system("clear");
+}
+
+void FacadeController::registerClient() {
+    system("clear");
+    this->clientController_->registerUser();
     system("clear");
 }
 
