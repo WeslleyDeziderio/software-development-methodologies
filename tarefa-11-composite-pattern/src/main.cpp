@@ -18,7 +18,7 @@ int main(void) {
     anotherProductBox.add(&kindle);
     productBox.add(&anotherProductBox);
 
-    std::cout << productBox.getPrice() << std::endl;
+    std::cout << "Price of the products inside the box: $" << productBox.getPrice() << std::endl;
 
     return 0;
 }
