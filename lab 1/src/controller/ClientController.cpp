@@ -105,8 +105,9 @@ void ClientController::deleteUser(){
     if (clientPosition != clientController.usersList.end()) {
         clientController.usersList.erase(clientPosition);
         std::cout << "\n\nClient deleted!" << std::endl;
+        return;
     }
-
+    std::cout << "\n\nClient not found!" << std::endl;
 }
 
 void ClientController::findUser(){
