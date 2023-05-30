@@ -8,12 +8,13 @@ inline void ManagerView::showMenu(){
     while (flag) {
         std::cout << "\nCadastrar cliente - 1\n"
                   << "Cadastrar gerente - 2\n" 
-                  << "Procurar usuário - 3\n" 
+                  << "Procurar cliente - 3\n" 
                   << "Listar clientes - 4\n"
                   << "Listar gerentes - 5\n" 
                   << "Editar cliente - 6\n"
-                  << "Editar gerente - 7\n"    
-                  << "Sair - 8" 
+                  << "Editar gerente - 7\n"
+                  << "Deletar cliente - 8\n"    
+                  << "Sair - 9" 
                   << std::endl;
         
         while (!(std::cin >> escolha)) {
@@ -31,7 +32,7 @@ inline void ManagerView::showMenu(){
                 facade_instance.registerManager();
                 break;
             case 3:
-                // findUser();
+                facade_instance.findClient();
                 break;
             case 4:
                 facade_instance.listAllClients();
@@ -40,12 +41,15 @@ inline void ManagerView::showMenu(){
                 facade_instance.listAllManagers();
                 break;
             case 6:
-                // editClient();
+                facade_instance.editClient();
                 break;
             case 7:
                 // editManager();
                 break;
             case 8:
+                facade_instance.deleteClient();
+                break;
+            case 9:
                 flag = false;
                 break;
             default:

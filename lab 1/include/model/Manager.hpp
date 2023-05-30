@@ -11,6 +11,7 @@ private:
 public:
     Manager();
     Manager(std::string login, std::string password);
+    Manager(std::string login, std::string password, std::string pfjCode, std::string establishment);
     virtual ~Manager();
     void setPfjCode(std::string pfjCode);
     std::string getPfjCode();

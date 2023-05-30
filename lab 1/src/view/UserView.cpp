@@ -29,7 +29,7 @@ inline void UserView::showMenu(){
                 // findUser();
                 break;
             case 3:
-                facade_instance.getQtdUserRegister();
+                // facade_instance.getQtdUserRegister();
                 // std::cout << "\nPressione Enter para continuar...\n";
                 // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::cin.get();

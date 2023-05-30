@@ -8,8 +8,13 @@ class ManagerController : public UserController{
 public:
     ManagerController();
     ~ManagerController();
-    void registerUser() override;
+
+    void editUser() override;
+    void deleteUser() override;
+    void findUser() override;
     void listAllUsers() override;
+    void registerUser() override;
+
     void createEstablisment();
     void retrieveEstablishment();
     void deleteEstablisment();

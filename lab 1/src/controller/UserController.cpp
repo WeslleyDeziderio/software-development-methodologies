@@ -3,7 +3,6 @@
 
 UserController userController;
 
-
 UserController::UserController() {}
 
 UserController::~UserController() {}

@@ -10,6 +10,12 @@ Client::Client(std::string login, std::string password){
 
 }
 
+Client::Client(std::string login, std::string password, std::string tipoPlano){
+    setLogin(login);
+    setPassword(password);
+    setTipoPlano(tipoPlano);
+}
+
 Client::~Client(){
 
 }

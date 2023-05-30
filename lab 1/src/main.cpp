@@ -17,8 +17,8 @@ int main(void) {
     // ClientView clientMenu;
     // clientMenu.showMenu();
 
-    // ManagerView managerMenu;
-    // managerMenu.showMenu();
+    ManagerView managerMenu;
+    managerMenu.showMenu();
 
     // UserController userController;
 

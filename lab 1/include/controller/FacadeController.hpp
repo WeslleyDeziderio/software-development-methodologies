@@ -30,15 +30,25 @@ public:
     void registerUser();
     void registerClient();
     void registerManager();
-    void setEntityRegister(const User& user);
+
     void editEntity();
     void deleteEntity();
     void findEntity();
+
+    void editClient();
+    void editManager();
+
+    void deleteClient();
+    void deleteManager();
+
+    void findClient();
+    void findManager();
+
     void listAllBikes();
     void listAllUsers();
     void listAllClients();
     void listAllManagers();
-    void getQtdUserRegister();
+
     void setEntityRegister(const Bike& bike);
     void editEntity(const Bike& bike);
     void deleteEntity(const Bike& bike);

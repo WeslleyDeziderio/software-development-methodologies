@@ -66,6 +66,18 @@ void ManagerController::listAllUsers(){
     }
 }
 
+void ManagerController::editUser(){
+
+}
+
+void ManagerController::deleteUser(){
+
+}
+
+void ManagerController::findUser(){
+
+}
+
 void ManagerController::createEstablisment(){
 
 }

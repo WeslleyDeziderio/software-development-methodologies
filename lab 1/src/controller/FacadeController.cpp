@@ -100,3 +100,23 @@ void FacadeController::registBike() {
     std::string aux;
     this->manageBike_->registBike(aux);
 }
+
+void FacadeController::editClient() {
+    system("clear");
+    this->clientController_->editUser();
+    system("clear");
+}
+
+void FacadeController::findClient() {
+    system("clear");
+    this->clientController_->findUser();
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+    system("clear");
+}
+
+void FacadeController::deleteClient() {
+    system("clear");
+    this->clientController_->deleteUser();
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+    system("clear");
+}
