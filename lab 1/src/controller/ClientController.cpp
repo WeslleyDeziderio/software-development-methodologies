@@ -10,13 +10,13 @@ ClientController::~ClientController(){
 
 void ClientController::editClient(){
 
-    std::string client_name;
-    std::cout << "Which client do you want to edit?" << std::endl;
-    std::cin >> client_name;
+    // std::string client_name;
+    // std::cout << "Which client do you want to edit?" << std::endl;
+    // std::cin >> client_name;
 
-    for(int i = 0; i < clientsList.size(); i++){
+    // for(int i = 0; i < clientsList.size(); i++){
 
-    }
+    // }
 }
 
 void ClientController::registerUser(){
@@ -29,9 +29,10 @@ void ClientController::registerUser(){
     std::cout << "Insira sua senha: ";
     std::cin >> usrPass;
     
-    Client a(usrLogin, usrPass);
+    // Client a(usrLogin, usrPass);
+    Client* a = new Client(usrLogin, usrPass);
     try {
-        a.validateUsername(a.getLogin());
+        a->validateUsername(a->getLogin());
     }
     catch (InvalidLoginException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
@@ -45,8 +46,8 @@ void ClientController::registerUser(){
     }
 
     try {
-        a.validatePassword(a.getPassword());
-        clientController.setClientRegister(a);
+        a->validatePassword(a->getPassword());
+        clientController.setUserRegister(a);
     }
     catch (InvalidPasswordException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
@@ -60,31 +61,26 @@ void ClientController::registerUser(){
     }
 }
 
-void ClientController::setClientRegister(Client aux) {
-    this->clientsList.push_back(aux);
-}
-
-void ClientController::getQtdUserRegister() {
-    unsigned long int qtd = this->clientsList.size();
-
-    if (qtd == 0) {
-        std::cout << "There are no registered customers." << std::endl;
-    }
-
-    for (unsigned long int i = 0; i < qtd; i++) {
-        std::cout << this->clientsList[i].getLogin() << std::endl;
-    }
-}
 
 void ClientController::listAllUsers(){
-    clientController.getQtdUserRegister();
+    
+    int qtd_client = 0;
+    for(User* aux_user : clientController.usersList){
+        if(Client* client = dynamic_cast<Client*>(aux_user)){
+            std::cout << "Client login: " << client->getLogin() << std::endl;
+            qtd_client++;
+        }
+    }
+    if(qtd_client == 0){
+        std::cout << "There are no registered clients!" << std::endl;
+    }
 }
 
-void ClientController::editPlan() {
+void ClientController::editPlan(){
 }
 
-void ClientController::deleteUser() {
-}
+// void ClientController::deleteUser() {
+// }
 
-void ClientController::findUser() {
-}
+// void ClientController::findUser() {
+// }

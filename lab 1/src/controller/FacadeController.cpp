@@ -1,6 +1,7 @@
 #include "../../include/controller/FacadeController.hpp"
 #include "../../include/controller/ClientController.hpp"
 #include "../../include/controller/BikeController.hpp"
+#include "../../include/controller/ManagerController.hpp"
 #include "../view/UserView.cpp" 
 #include <cstdlib> 
 
@@ -10,6 +11,7 @@ FacadeController::FacadeController(){
    this->userController_ = new UserController(); 
    this->clientController_ = new ClientController();
    this->manageBike_ = new ManageBike();
+   this->managerController_ = new ManagerController();
 }
 
 FacadeController* FacadeController::getInstance() {
@@ -47,6 +49,14 @@ void FacadeController::listAllClients() {
 
 }
 
+void FacadeController::listAllManagers() {
+    system("clear");
+    this->managerController_->listAllUsers();
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+    system("clear");
+
+}
+
 void FacadeController::setEntityRegister(const Bike& bike) {
 
 }
@@ -78,6 +88,13 @@ void FacadeController::registerClient() {
     this->clientController_->registerUser();
     system("clear");
 }
+
+void FacadeController::registerManager() {
+    system("clear");
+    this->managerController_->registerUser();
+    system("clear");
+}
+
 
 void FacadeController::registBike() {
     std::string aux;

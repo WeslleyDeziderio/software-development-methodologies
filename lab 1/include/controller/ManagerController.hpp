@@ -2,11 +2,14 @@
 #define MANAGERCONTROLLER_HPP
 
 #include "../../include/model/Manager.hpp"
+#include "UserController.hpp"
 
-class ManagerController {
+class ManagerController : public UserController{
 public:
     ManagerController();
     ~ManagerController();
+    void registerUser() override;
+    void listAllUsers() override;
     void createEstablisment();
     void retrieveEstablishment();
     void deleteEstablisment();

@@ -16,12 +16,12 @@ class UserView;
 
 class UserController {
 protected:
-    std::vector<User> usersList;
+    std::vector<User*> usersList;
 public:
     UserController();
     virtual ~UserController();
     virtual void registerUser();
-    virtual void setUserRegister(User aux);
+    virtual void setUserRegister(User* aux);
     virtual void getQtdUserRegister();
     virtual void editUser();
     virtual void findUser();

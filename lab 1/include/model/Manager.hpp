@@ -10,6 +10,7 @@ private:
     std::string establishment;
 public:
     Manager();
+    Manager(std::string login, std::string password);
     virtual ~Manager();
     void setPfjCode(std::string pfjCode);
     std::string getPfjCode();

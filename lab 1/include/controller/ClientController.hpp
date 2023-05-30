@@ -14,12 +14,12 @@ public:
     virtual ~ClientController();
     void editClient();
     void editPlan();
-    void setClientRegister(Client aux);
+    // void setClientRegister(Client aux);
     void registerUser() override;
     void listAllUsers() override;
-    void getQtdUserRegister() override;
-    void deleteUser() override;
-    void findUser() override;
+    // void getQtdUserRegister() override;
+    // void deleteUser() override;
+    // void findUser() override;
 
 
 

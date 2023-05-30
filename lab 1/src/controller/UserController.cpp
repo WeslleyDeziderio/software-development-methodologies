@@ -18,9 +18,10 @@ void UserController::registerUser() {
     std::cout << "Insira sua senha: ";
     std::cin >> usrPass;
     
-    User a(usrLogin, usrPass);
+    // User a(usrLogin, usrPass);
+    User* a = new User(usrLogin, usrPass);
     try {
-        a.validateUsername(a.getLogin());
+        a->validateUsername(a->getLogin());
     }
     catch (InvalidLoginException& e) {
         std::cerr << "Erro: " << e.what() << std::endl;
@@ -34,7 +35,7 @@ void UserController::registerUser() {
     }
 
     try {
-        a.validatePassword(a.getPassword());
+        a->validatePassword(a->getPassword());
         userController.setUserRegister(a);
     }
     catch (InvalidPasswordException& e) {
@@ -49,7 +50,7 @@ void UserController::registerUser() {
     }
 }
 
-void UserController::setUserRegister(User a) {
+void UserController::setUserRegister(User* a) {
     this->usersList.push_back(a);
 }
 
@@ -61,7 +62,7 @@ void UserController::getQtdUserRegister() {
     }
 
     for (unsigned long int i = 0; i < qtd; i++) {
-        std::cout << this->usersList[i].getLogin() << std::endl;
+        std::cout << this->usersList[i]->getLogin() << std::endl;
     }
 }
 

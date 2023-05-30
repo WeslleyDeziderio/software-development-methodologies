@@ -24,6 +24,7 @@ inline void ClientView::showMenu(){
                 facade_instance.registerClient();
                 break;
             case 2:
+                
                 // findUser();
                 break;
             case 3:

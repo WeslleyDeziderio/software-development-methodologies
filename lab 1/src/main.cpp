@@ -5,16 +5,25 @@
 #include "../include/exception/SenhaInvalidaException.hpp"
 // #include "../include/view/UserView.hpp"
 #include "view/UserView.cpp"
+#include "view/ClientView.cpp"
+#include "view/ManagerView.cpp"
 #include "../include/controller/UserController.hpp"
 #include "../include/controller/BikeController.hpp"
 
 int main(void) {
-    UserView userMenu;
-    userMenu.showMenu();
-    UserController userController;
+    // UserView userMenu;
+    // userMenu.showMenu();
 
-    ManageBike* manageBike = new ManageBike();
-    manageBike->registBike("urban");
+    // ClientView clientMenu;
+    // clientMenu.showMenu();
+
+    // ManagerView managerMenu;
+    // managerMenu.showMenu();
+
+    // UserController userController;
+
+    // ManageBike* manageBike = new ManageBike();
+    // manageBike->registBike("urban");
 
     return 0;
 }

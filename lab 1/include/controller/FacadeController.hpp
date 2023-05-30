@@ -3,9 +3,11 @@
 
 #include "../model/User.hpp"
 #include "../model/Bike.hpp"
+
 #include "../../include/controller/UserController.hpp"
 #include "../../include/controller/BikeController.hpp"
 #include "../../include/controller/ClientController.hpp"
+#include "../../include/controller/ManagerController.hpp"
 
 #include <string>
 #include <iostream>
@@ -17,6 +19,7 @@ private:
     UserController* userController_;
     ManageBike* manageBike_;
     ClientController* clientController_;
+    ManagerController* managerController_;
     static FacadeController* instance;
 
 public:
@@ -26,6 +29,7 @@ public:
     void registBike();
     void registerUser();
     void registerClient();
+    void registerManager();
     void setEntityRegister(const User& user);
     void editEntity();
     void deleteEntity();
@@ -33,6 +37,7 @@ public:
     void listAllBikes();
     void listAllUsers();
     void listAllClients();
+    void listAllManagers();
     void getQtdUserRegister();
     void setEntityRegister(const Bike& bike);
     void editEntity(const Bike& bike);
