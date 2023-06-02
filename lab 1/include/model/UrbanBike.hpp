@@ -6,7 +6,7 @@
 
 class UrbanBike : public Bike {
 public:
-    void Rent();
+    void Create();
     friend class Bike;
 };
 

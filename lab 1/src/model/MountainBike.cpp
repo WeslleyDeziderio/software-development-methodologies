@@ -1,5 +1,5 @@
 #include "../../include/model/MountainBike.hpp"
 
-void MountainBike::Rent() {
+void MountainBike::Create() {
     std::cout << "You're creating a mountain bike!" << std::endl;
 }
