@@ -13,27 +13,31 @@
 
 class FacadeController {
 protected:
-private:
     UserController* userController_;
-    ManageBike* manageBike_;
+    BikeController* bikeController_;
     ClientController* clientController_;
     static FacadeController* instance;
+private:
 
 public:
     FacadeController();
     static FacadeController* getInstance();
 
     void registBike();
-    void registerUser();
-    void registerClient();
+    void registerClient(std::unordered_map<std::string, std::string> auxMap);
+
     void setEntityRegister(const User& user);
-    void editEntity();
-    void deleteEntity();
-    void findEntity();
+    void deleteUser(std::string login);
+    void findUser(std::string login);
+
+    void editClient(std::string login, std::string newLogin, std::string newPassword, std::string newPlan);
+    void editLogin(std::string login, std::string newLogin);
+    void editPassword(std::string login, std::string newPassword);
+
     void listAllBikes();
     void listAllUsers();
     void listAllClients();
-    void getQtdUserRegister();
+
     void setEntityRegister(const Bike& bike);
     void editEntity(const Bike& bike);
     void deleteEntity(const Bike& bike);

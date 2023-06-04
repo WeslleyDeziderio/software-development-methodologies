@@ -2,7 +2,6 @@
 #define USERCONTROLLER_HPP
 
 #include "../../include/model/User.hpp"
-#include "../../include/view/UserView.hpp"
 
 #include <string>
 #include <iostream>
@@ -12,21 +11,21 @@
 #include <cstdlib> 
 
 class User;
-class UserView;
 
 class UserController {
 protected:
-    std::vector<User> usersList;
+    std::unordered_map<std::string, User*> usersMap;
+
 public:
     UserController();
     virtual ~UserController();
-    virtual void registerUser();
-    virtual void setUserRegister(User aux);
-    virtual void getQtdUserRegister();
-    virtual void editUser();
-    virtual void findUser();
-    virtual void listAllUsers();
-    virtual void deleteUser();
+    virtual void registerUser(std::unordered_map<std::string, std::string> auxMap);
+    virtual void editUser(std::string login, std::string newLogin, std::string newPassword);
+    virtual void editLogin(std::string login, std::string newLogin);
+    virtual void editPassword(std::string login, std::string newPassword);
+    virtual void findUser(std::string login);
+    virtual void deleteUser(std::string login);
+    void listAllUsers();
 };
 
 #endif //  USERCONTROLLER_HPP

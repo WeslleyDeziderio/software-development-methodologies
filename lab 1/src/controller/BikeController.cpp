@@ -1,43 +1,43 @@
 #include "../../include/controller/BikeController.hpp"
 
-ManageBike manageBike;
+BikeController bikeController;
 
-ManageBike::ManageBike() {}
+BikeController::BikeController() {}
 
-ManageBike::~ManageBike() {}
+BikeController::~BikeController() {}
 
-void ManageBike::registBike(std::string type) {
-    std::cout << "Bike list\n"
-                << "Urban\n"
-                << "Mountain\n"
-                << "Couple\n"
-    << std::endl;
-    std::cout << "What kind of byke do you want to create?" << std::endl;
-    std::cin >> type;
+void BikeController::registBike(std::string type) {
+    // std::cout << "Bike list\n"
+    //             << "Urban\n"
+    //             << "Mountain\n"
+    //             << "Couple\n"
+    // << std::endl;
+    // std::cout << "What kind of byke do you want to create?" << std::endl;
+    // std::cin >> type;
 
-    if (type == "urban" || type == "Urban") {
-        ptrBike = new UrbanBike();
-    }
-    else if (type == "mountain" || type == "Mountain") {
-        ptrBike = new MountainBike();
-    } else {
-        std::cout << "Invalid entry!" << std::endl;
-        ptrBike = NULL;
-    }
+    // if (type == "urban" || type == "Urban") {
+    //     ptrBike = new UrbanBike();
+    // }
+    // else if (type == "mountain" || type == "Mountain") {
+    //     ptrBike = new MountainBike();
+    // } else {
+    //     std::cout << "Invalid entry!" << std::endl;
+    //     ptrBike = NULL;
+    // }
 }
 
-void ManageBike::findBike(){
-
-}
-
-void ManageBike::editBike(){
+void BikeController::findBike(){
 
 }
 
-void ManageBike::deleteBike(){
+void BikeController::editBike(){
 
 }
 
-void ManageBike::listAllBikes(){
+void BikeController::deleteBike(){
+
+}
+
+void BikeController::listAllBikes(){
 
 }

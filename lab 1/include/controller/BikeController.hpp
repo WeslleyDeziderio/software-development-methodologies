@@ -1,5 +1,5 @@
-#ifndef MANAGEBIKE_HPP
-#define MANAGEBIKE_HPP
+#ifndef BikeController_HPP
+#define BikeController_HPP
 
 #include <iostream>
 #include <vector>
@@ -9,12 +9,12 @@
 #include "../model/UrbanBike.hpp"
 #include "../model/MountainBike.hpp"
 
-class ManageBike {
+class BikeController {
 private:
     Bike* ptrBike;
 public:
-    ManageBike();
-    virtual ~ManageBike();
+    BikeController();
+    virtual ~BikeController();
     void putBikeIds();
     void registBike(std::string type);
     void findBike();

@@ -4,10 +4,10 @@ Client::Client(){
 
 }
 
-Client::Client(std::string login, std::string password){
+Client::Client(std::string login, std::string password, std::string plan){
     setLogin(login);
     setPassword(password);
-
+    setTipoPlano(plan);
 }
 
 Client::~Client(){

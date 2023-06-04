@@ -10,7 +10,7 @@ private:
     std::string tipoPlano;
 public:
     Client();
-    Client(std::string login, std::string password);
+    Client(std::string login, std::string password, std::string tipoPlano);
     virtual ~Client();
     void setTipoPlano(std::string tipoPlano);
     std::string getTipoPlano();

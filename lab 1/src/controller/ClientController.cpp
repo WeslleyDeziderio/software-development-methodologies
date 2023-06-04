@@ -1,90 +1,63 @@
 #include "../../include/controller/ClientController.hpp"
 
-ClientController clientController;
 
 ClientController::ClientController(){
+
 }
 
 ClientController::~ClientController(){
+
 }
 
-void ClientController::editClient(){
+void ClientController::editPlan(std::string login, std::string newPlan){
+    try{
+        if (usersMap.empty()) {
+            throw std::runtime_error("Não existem clientes cadastrados.");
+        } else {
+            auto it = this->usersMap.find(login);
 
-    std::string client_name;
-    std::cout << "Which client do you want to edit?" << std::endl;
-    std::cin >> client_name;
+            if( it != usersMap.end() ){
+            auto it = this->usersMap.find(login);
 
-    for(int i = 0; i < clientsList.size(); i++){
+                if( it != usersMap.end() ){
+                    User& user = *it->second;
+
+                    Client* client = dynamic_cast<Client*>(&user);
+                    if(newPlan != ""){
+                        client->setTipoPlano(newPlan);
+                    }
+
+                }else{
+                    throw std::runtime_error("Cliente não encontrado.");
+                }
+            }
+        }
+    }
+    catch(std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
 
     }
+
 }
 
-void ClientController::registerUser(){
-    std::string usrLogin;
-    std::string usrPass;
+void ClientController::listAllClients(){
 
-    std::cout << "Insira seu login: ";
-    std::cin >> usrLogin;
-
-    std::cout << "Insira sua senha: ";
-    std::cin >> usrPass;
-    
-    Client a(usrLogin, usrPass);
-    try {
-        a.validateUsername(a.getLogin());
+    try{
+        if (usersMap.empty()) {
+            throw std::runtime_error("Não existem clientes cadastrados.");
+        } else {
+            for (auto pair : this->usersMap) {
+                std::string key = pair.first;
+                User* user = pair.second;
+                
+                if (Client* client = dynamic_cast<Client*>(user)) {
+                    std::cout << "Cliente - " << "Login: " << client->getLogin() << "\tPassword: " << client->getPassword() << "\t Plano: "<< client->getTipoPlano() <<std::endl;
+                }
+            }
+        }
     }
-    catch (InvalidLoginException& e) {
-        std::cerr << "Erro: " << e.what() << std::endl;
-        system("read -p '\n\n\n\nAperte Enter para continuar' var");
-
-    }
-    catch (...) {
-        std::cerr << "Erro: " << std::endl;
-        system("read -p '\n\n\n\nAperte Enter para continuar' var");
+    catch(std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
 
     }
-
-    try {
-        a.validatePassword(a.getPassword());
-        clientController.setClientRegister(a);
-    }
-    catch (InvalidPasswordException& e) {
-        std::cerr << "Erro: " << e.what() << std::endl;
-        system("read -p '\n\n\n\nAperte Enter para continuar' var");
-
-    }
-    catch (...) {
-        std::cerr << "Erro: " << std::endl;
-        system("read -p '\n\n\n\nAperte Enter para continuar' var");
-
-    }
-}
-
-void ClientController::setClientRegister(Client aux) {
-    this->clientsList.push_back(aux);
-}
-
-void ClientController::getQtdUserRegister() {
-    unsigned long int qtd = this->clientsList.size();
-
-    if (qtd == 0) {
-        std::cout << "There are no registered customers." << std::endl;
-    }
-
-    for (unsigned long int i = 0; i < qtd; i++) {
-        std::cout << this->clientsList[i].getLogin() << std::endl;
-    }
-}
-
-void ClientController::listAllUsers(){
-    clientController.getQtdUserRegister();
-}
-
-void ClientController::editPlan() {
-}
-
-void ClientController::deleteUser() {
-}
-
-void ClientController::findUser() {
 }

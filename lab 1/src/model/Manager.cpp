@@ -1,6 +1,13 @@
 #include "../../include/model/Manager.hpp"
 
-Manager::Manager() {};
+Manager::Manager(){
+
+};
+
+Manager::Manager(std::string login, std::string password){
+    setLogin(login);
+    setPassword(password);
+};
 
 Manager::~Manager() {};
 
