@@ -1,12 +1,14 @@
 #ifndef CLIENTVIEW_HPP
 #define CLIENTVIEW_HPP
 
-#include "../../include/view/UserView.hpp"
+#include "../../include/view/UserViewTemplate.hpp"
 
 
-class ClientView : public UserView{
+class ClientView : public UserViewTemplate{
 public:
-    void showMenu();
+    void showMenu() override;
+    void registrationMenu() override;
+    void editMenu() override;
 };
 
 
