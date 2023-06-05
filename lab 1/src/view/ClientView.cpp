@@ -26,7 +26,7 @@ inline void ClientView::showMenu(){
                 editMenu();
                 break;
             case 3:
-                facade_instance.listAllClients();
+                // facade_instance.listAllClients();
                 break;
             case 4:
                 flag = false;

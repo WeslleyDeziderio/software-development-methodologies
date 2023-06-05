@@ -2,8 +2,6 @@
 #define MODELFACTORY_HPP
 
 #include "../model/User.hpp"
-#include "../model/Client.hpp"
-#include "../model/Manager.hpp"
 
 class ModelFactory {
 private:
@@ -11,7 +9,7 @@ private:
 public:
     ModelFactory();
     ~ModelFactory();
-    static User* createUser(std::unordered_map<std::string, std::string> auxMap);
+    virtual User* createUser(std::unordered_map<std::string, std::string> auxMap) = 0;
 };
 
 #endif // MODELFACTORY.HPP

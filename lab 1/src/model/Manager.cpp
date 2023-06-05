@@ -9,6 +9,13 @@ Manager::Manager(std::string login, std::string password){
     setPassword(password);
 };
 
+Manager::Manager(std::string login, std::string password, std::string establishment, std::string pfjCode){
+    setLogin(login);
+    setPassword(password);
+    setEstablishment(establishment);
+    setPfjCode(pfjCode);
+};
+
 Manager::~Manager() {};
 
 void Manager::setEstablishment(std::string establishment) {
@@ -20,7 +27,7 @@ std::string Manager::getEstablishment() {
 }
 
 void Manager::setPfjCode(std::string pfjCode) {
-    this->establishment = establishment;
+    this->pfjCode = pfjCode;
 }
 
 std::string Manager::getPfjCode() {

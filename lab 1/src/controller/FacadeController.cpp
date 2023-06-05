@@ -6,9 +6,10 @@
 FacadeController* FacadeController::instance = nullptr;
 
 FacadeController::FacadeController(){
-   this->userController_ = new UserController(); 
-   this->clientController_ = new ClientController();
-   this->bikeController_ = new BikeController();
+    this->userController_ = new UserController(); 
+    this->bikeController_ = new BikeController();
+    this->clientController_ = new ClientController();
+    this->managerController_ = new ManagerController();
 }
 
 FacadeController* FacadeController::getInstance() {
@@ -26,17 +27,33 @@ void FacadeController::editClient(std::string login, std::string newLogin, std::
     system("clear");
 }
 
-void FacadeController::deleteUser(std::string login) {
+void FacadeController::deleteClient(std::string login) {
     system("clear");
-    this->userController_->deleteUser(login);
+    this->clientController_->deleteUser(login);
     system("read -p '\n\n\n\nPress enter to continue.' var");
     system("clear");
 
 }
 
-void FacadeController::findUser(std::string login) {
+void FacadeController::deleteManager(std::string login) {
     system("clear");
-    this->userController_->findUser(login);
+    this->managerController_->deleteUser(login);
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+    system("clear");
+
+}
+
+void FacadeController::findClient(std::string login) {
+    system("clear");
+    this->clientController_->findUser(login);
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+    system("clear");
+
+}
+
+void FacadeController::findManager(std::string login) {
+    system("clear");
+    this->managerController_->findUser(login);
     system("read -p '\n\n\n\nPress enter to continue.' var");
     system("clear");
 
@@ -44,37 +61,10 @@ void FacadeController::findUser(std::string login) {
 
 void FacadeController::listAllUsers() {
     system("clear");
-    this->userController_->listAllUsers();
-    system("read -p '\n\n\n\nPress enter to continue.' var");
-    system("clear");
-
-}
-
-void FacadeController::listAllClients() {
-    system("clear");
+    this->managerController_->listAllManagers();
     this->clientController_->listAllClients();
     system("read -p '\n\n\n\nPress enter to continue.' var");
     system("clear");
-
-}
-
-void FacadeController::setEntityRegister(const Bike& bike) {
-
-}
-
-void FacadeController::editEntity(const Bike& bike) {
-
-}
-
-void FacadeController::deleteEntity(const Bike& bike) {
-
-}
-
-void FacadeController::findEntity(const Bike& bike) {
-
-}
-
-void FacadeController::listAllBikes() {
 
 }
 
@@ -84,7 +74,17 @@ void FacadeController::registerClient(std::unordered_map<std::string, std::strin
     system("clear");
 }
 
+void FacadeController::registerManager(std::unordered_map<std::string, std::string> auxMap) {
+    system("clear");
+    this->managerController_->registerUser(auxMap);
+    system("clear");
+}
+
 void FacadeController::registBike() {
     std::string aux;
     this->bikeController_->registBike(aux);
+}
+
+void FacadeController::listAllBikes() {
+
 }

@@ -6,6 +6,7 @@
 #include "../../include/controller/UserController.hpp"
 #include "../../include/controller/BikeController.hpp"
 #include "../../include/controller/ClientController.hpp"
+#include "../../include/controller/ManagerController.hpp"
 
 #include <string>
 #include <iostream>
@@ -16,6 +17,7 @@ protected:
     UserController* userController_;
     BikeController* bikeController_;
     ClientController* clientController_;
+    ManagerController* managerController_;
     static FacadeController* instance;
 private:
 
@@ -24,24 +26,19 @@ public:
     static FacadeController* getInstance();
 
     void registBike();
+    void registerManager(std::unordered_map<std::string, std::string> auxMap);
+
     void registerClient(std::unordered_map<std::string, std::string> auxMap);
-
-    void setEntityRegister(const User& user);
-    void deleteUser(std::string login);
-    void findUser(std::string login);
-
     void editClient(std::string login, std::string newLogin, std::string newPassword, std::string newPlan);
-    void editLogin(std::string login, std::string newLogin);
-    void editPassword(std::string login, std::string newPassword);
+
+    void deleteClient(std::string login);
+    void deleteManager(std::string login);
+
+    void findClient(std::string login);
+    void findManager(std::string login);
 
     void listAllBikes();
     void listAllUsers();
-    void listAllClients();
-
-    void setEntityRegister(const Bike& bike);
-    void editEntity(const Bike& bike);
-    void deleteEntity(const Bike& bike);
-    void findEntity(const Bike& bike);
-
+    
 };
 #endif //  FacadeController_HPP

@@ -1,11 +1,15 @@
 #ifndef MANAGERVIEW_HPP
 #define MANAGERVIEW_HPP
 
-#include "../../include/view/UserView.hpp"
+#include "../../include/view/UserViewTemplate.hpp"
 
-class ManagerView : public UserView{
+class ManagerView : public UserViewTemplate{
 public:
-    void showMenu();
+    void showMenu() override;
+    void editMenu() override;
+    void registrationMenu() override;
+    void deleteMenu() override;
+    
 };
 
 #endif
