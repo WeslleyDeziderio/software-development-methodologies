@@ -29,7 +29,7 @@ void ManagerController::deleteEstablisment(){
 void ManagerController::registerUser(std::unordered_map<std::string, std::string> auxMap){
     
     // std::unique_ptr<ModelFactory> modelFactory = std::make_unique<ManagerModelFactory>();
-    ModelFactory* modelFactory = new ManagerModelFactory();
+    UserModelFactory* modelFactory = new ManagerModelFactory();
     User* a = modelFactory->createUser(auxMap);
     try {
         a->validateUsername(a->getLogin());
