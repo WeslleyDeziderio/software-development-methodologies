@@ -4,7 +4,7 @@ PROJ_NAME=crud
 HPP_SOURCE=$(wildcard ./include/*.hpp ./include/utils/*.hpp ./include/exception/*.hpp ./include/model/*.hpp ./include/view/*.hpp ./include/controller/*.hpp ./include/factories/*.hpp)
 
 # .cpp files
-CPP_SOURCE=$(wildcard ./src/*.cpp ./src/utils/*.cpp ./src/exception/*.cpp ./src/model/*.cpp ./src/view/*.cpp ./src/controller/*.cpp ./src/factories*.cpp)
+CPP_SOURCE=$(wildcard ./src/*.cpp ./src/utils/*.cpp ./src/exception/*.cpp ./src/model/*.cpp ./src/view/*.cpp ./src/controller/*.cpp ./src/factories/*.cpp)
 
 
 # Object files
