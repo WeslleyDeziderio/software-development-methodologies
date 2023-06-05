@@ -2,9 +2,9 @@
 #define CLIENTMODELFACTORY_HPP
 
 #include "../../include/model/Client.hpp"
-#include "ModelFactory.hpp"
+#include "UserModelFactory.hpp"
 
-class ClientModelFactory : public ModelFactory {
+class ClientModelFactory : public UserModelFactory {
 private:
 public:
     ClientModelFactory();

@@ -2,9 +2,9 @@
 #define MANAGERMODELFACTORY_HPP
 
 #include "../../include/model/Manager.hpp"
-#include "ModelFactory.hpp"
+#include "UserModelFactory.hpp"
 
-class ManagerModelFactory : public ModelFactory {
+class ManagerModelFactory : public UserModelFactory {
 private:
 public:
     ManagerModelFactory();
