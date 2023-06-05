@@ -2,15 +2,14 @@
 #include "../../include/controller/FacadeController.hpp"
 
 inline void ClientView::showMenu(){
-    FacadeController facade_instance;
+    
     int escolha = 0;
     bool flag = true;
     while (flag) {
-        std::cout << "\nCadastrar usuário - 1\n" 
-                  << "Procurar usuário - 2\n" 
-                  << "Listar usuários - 3\n" 
-                  << "Editar cliente - 4\n"    
-                  << "Sair - 6" 
+        std::cout << "\nCadastrar cliente - 1\n"  
+                  << "Editar cliente - 2\n"
+                  << "Listar clientes - 3\n"     
+                  << "Sair - 4" 
                   << std::endl;
         
         while (!(std::cin >> escolha)) {
@@ -21,29 +20,15 @@ inline void ClientView::showMenu(){
 
         switch (escolha) {
             case 1:
-                facade_instance.registerClient();
+                registrationMenu();
                 break;
             case 2:
-                // findUser();
+                editMenu();
                 break;
             case 3:
-                facade_instance.listAllClients();
-                // std::cout << "\nPressione Enter para continuar...\n";
-                // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cin.get();
+                // facade_instance.listAllClients();
                 break;
             case 4:
-                // editUser();
-                break;
-            case 5:
-                std::cout << "Tem certeza que deseja excluir um usuário? (s/n): ";
-                char confirmacao;
-                std::cin >> confirmacao;
-                if (confirmacao == 's' || confirmacao == 'S') {
-                    // deleteUser();
-                }
-                break;
-            case 6:
                 flag = false;
                 break;
             default:
@@ -51,5 +36,47 @@ inline void ClientView::showMenu(){
                 break;
         }
     }
-    
+}
+
+void ClientView::registrationMenu(){
+    system("clear");
+    std::unordered_map<std::string, std::string> auxMap;
+    std::string clientLogin;
+    std::string clientPass;
+    std::string clientPlan;
+
+    std::cout << "Insira seu login: ";
+    std::cin >> clientLogin;
+
+    std::cout << "Insira sua senha: ";
+    std::cin >> clientPass;
+
+    std::cout << "Insira seu plano: ";
+    std::cin >> clientPlan;
+
+    auxMap.insert(std::make_pair("login", clientLogin));
+    auxMap.insert(std::make_pair("password", clientPass));
+    auxMap.insert(std::make_pair("plan", clientPlan));
+
+    this->facade_instance.registerClient(auxMap);
+}
+
+void ClientView::editMenu(){
+
+    system("clear");
+    std::string login, newLogin, newPassword = "", newPlan = "";
+    std::cout << "Insira o login do usuário que deseja editar: ";
+    std::cin >> login;
+
+    std::cout << "Insira o novo login: ";
+    std::cin >> newLogin;
+
+    std::cout << "Insira a nova senha: ";
+    std::cin >> newPassword;
+
+    std::cout << "Insira o novo plano: ";
+    std::cin >> newPlan;
+
+    facade_instance.editClient(login, newLogin, newPassword, newPlan);
+
 }

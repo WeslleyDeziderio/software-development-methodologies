@@ -6,23 +6,17 @@
 
 class ClientController : public UserController{
 private:
-    std::vector<Client> clientsList;
+    
 protected:
 
 public:
     ClientController();
     virtual ~ClientController();
-    void editClient();
-    void editPlan();
-    void setClientRegister(Client aux);
-    void registerUser() override;
-    void listAllUsers() override;
-    void getQtdUserRegister() override;
-    void deleteUser() override;
-    void findUser() override;
-
-
-
+    void editPlan(std::string login, std::string newPlan);
+    void registerUser(std::unordered_map<std::string, std::string> auxMap) override;
+    void findUser(std::string login) override;
+    void listAllClients();
+    
 };
 
 #endif
