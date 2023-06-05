@@ -6,15 +6,15 @@
 
 class Manager : public User {
 private:
-    std::string pfjCode;
+    std::string cnpjCode;
     std::string establishment;
 public:
     Manager();
     Manager(std::string login, std::string password);
-    Manager(std::string login, std::string password, std::string establishment, std::string pfjCode);
+    Manager(std::string login, std::string password, std::string establishment, std::string cnpjCode);
     virtual ~Manager();
-    void setPfjCode(std::string pfjCode);
-    std::string getPfjCode();
+    void setCnpjCode(std::string cnpjCode);
+    std::string getCnpjCode();
     void setEstablishment(std::string establishment);
     std::string getEstablishment();
 };

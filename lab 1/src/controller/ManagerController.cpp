@@ -99,7 +99,7 @@ void ManagerController::listAllManagers(){
                 if(Manager* manager = dynamic_cast<Manager*>(user)) {
                     hasManager = true;
                     std::cout << "Gerente - " << "Login: " << manager->getLogin() << "\tPassword: " << manager->getPassword() 
-                    << "\tEstablishment: " << manager->getEstablishment() << "\tpfjCode: " << manager->getPfjCode() << std::endl;
+                    << "\tEstablishment: " << manager->getEstablishment() << "\tcnpjCode: " << manager->getCnpjCode() << std::endl;
                 }
             }
             if(!hasManager){

@@ -53,7 +53,7 @@ void ManagerView::registrationMenu(){
     std::string userPass;
     std::string clientPlan;
     std::string managerEstablishment;
-    std::string managerPfjCode;
+    std::string managerCnpjCode;
     int escolha = 0;
 
     std::cout << "Cadastrar cliente - 1\n"
@@ -88,13 +88,13 @@ void ManagerView::registrationMenu(){
             std::cout << "Insira o Establishment: ";
             std::cin >> managerEstablishment;
 
-            std::cout << "Insira o PFJ Code: ";
-            std::cin >> managerPfjCode;
+            std::cout << "Insira o cnpj Code: ";
+            std::cin >> managerCnpjCode;
 
             auxMap.insert(std::make_pair("login", userLogin));
             auxMap.insert(std::make_pair("password", userPass));
             auxMap.insert(std::make_pair("establishment", managerEstablishment));
-            auxMap.insert(std::make_pair("pfjCode", managerPfjCode));
+            auxMap.insert(std::make_pair("cnpj", managerCnpjCode));
 
             this->facade_instance.registerManager(auxMap);
             break;
