@@ -8,7 +8,8 @@
 #include <vector>
 #include <list>
 #include <algorithm>
-#include <cstdlib> 
+#include <cstdlib>
+#include <unordered_map>
 
 class User;
 
