@@ -1,40 +1,23 @@
 #include "../../include/controller/BikeController.hpp"
-
-BikeController bikeController;
+#include <algorithm>
 
 BikeController::BikeController() {}
 
 BikeController::~BikeController() {}
 
-void BikeController::registBike(std::string type) {
-    // std::cout << "Bike list\n"
-    //             << "Urban\n"
-    //             << "Mountain\n"
-    //             << "Couple\n"
-    // << std::endl;
-    // std::cout << "What kind of byke do you want to create?" << std::endl;
-    // std::cin >> type;
-
-    // if (type == "urban" || type == "Urban") {
-    //     ptrBike = new UrbanBike();
-    // }
-    // else if (type == "mountain" || type == "Mountain") {
-    //     ptrBike = new MountainBike();
-    // } else {
-    //     std::cout << "Invalid entry!" << std::endl;
-    //     ptrBike = NULL;
-    // }
+void BikeController::registerBike(std::string type) {
+ 
 }
 
-void BikeController::findBike(){
+void BikeController::findBike(std::string id){
 
 }
 
-void BikeController::editBike(){
+void BikeController::editBike(std::string id, double newPrice){
 
 }
 
-void BikeController::deleteBike(){
+void BikeController::deleteBike(std::string id){
 
 }
 

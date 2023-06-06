@@ -1,5 +1,10 @@
 #include "../../include/model/MountainBike.hpp"
 
-void MountainBike::Create() {
-    std::cout << "You're creating a mountain bike!" << std::endl;
+MountainBike::MountainBike() {}
+
+MountainBike::MountainBike(std::string type, double price) {
+    setBikeType(type);
+    setBikePrice(price);
 }
+
+MountainBike::~MountainBike() {};

@@ -6,8 +6,9 @@
 
 class UrbanBike : public Bike {
 public:
-    void Create();
-    friend class Bike;
+    UrbanBike();
+    UrbanBike(std::string type, double price);
+    virtual ~UrbanBike();
 };
 
 #endif // URBANbIKE_CPP

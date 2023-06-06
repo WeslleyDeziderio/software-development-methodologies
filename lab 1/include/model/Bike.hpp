@@ -9,11 +9,9 @@ private:
     double price;
 public: 
     Bike();
-    Bike(std::string& type, double price);
-    virtual void Rent() = 0;
-    static Bike* BikeFactory(std::string type);
+    Bike(std::string type, double price);
     virtual ~Bike();
-    void setBikeType(std::string& type);
+    void setBikeType(std::string type);
     std:: string getBikeType();
     void setBikePrice(double price);
     double getBikePrice();

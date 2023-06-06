@@ -1,6 +1,10 @@
 #include "../../include/model/UrbanBike.hpp"
 
-void UrbanBike::Create() {
-    std::cout << "You're creating an urban bike!" << std::endl;
+UrbanBike::UrbanBike() {};
+
+UrbanBike::UrbanBike(std::string type, double price) {
+    setBikeType(type);
+    setBikePrice(price);
 }
 
+UrbanBike::~UrbanBike() {}
