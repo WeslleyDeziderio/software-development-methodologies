@@ -14,6 +14,7 @@ class Bike;
 class BikeController {
 protected:
     std::unordered_map<std::string, Bike*> bikeMap;
+    static int nextId;
 
 public:
     BikeController();

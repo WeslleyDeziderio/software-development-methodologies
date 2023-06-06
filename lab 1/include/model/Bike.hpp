@@ -7,6 +7,7 @@ class Bike {
 private:
     std::string type;
     double price;
+    int id;
 public: 
     Bike();
     Bike(std::string type, double price);
@@ -15,6 +16,8 @@ public:
     std:: string getBikeType();
     void setBikePrice(double price);
     double getBikePrice();
+    void setId(int id);
+    int getId();
 };
 
 #endif // BIKE_HPP

@@ -24,3 +24,11 @@ std::string Bike::getBikeType(){
 double Bike::getBikePrice(){
     return price;
 }
+
+void Bike::setId(int id) {
+    this->id = id;
+}
+
+int Bike::getId() {
+    return id;
+}
