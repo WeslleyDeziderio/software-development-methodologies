@@ -19,8 +19,6 @@ void MountainBikeController::findBike(std::string id) {}
 
 void MountainBikeController::deleteBike(std::string id) {}
 
-std::string MountainBikeController::getMountainBikeById(std::string id) {}
-
 void MountainBikeController::loadBikes() {}
 
 void MountainBikeController::saveBikes() {}

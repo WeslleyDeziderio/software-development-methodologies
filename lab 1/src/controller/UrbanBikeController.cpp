@@ -19,8 +19,6 @@ void UrbanBikeController::findBike(std::string id) {}
 
 void UrbanBikeController::deleteBike(std::string id) {}
 
-std::string UrbanBikeController::getUrbanBikesById(std::string id) {}
-
 void UrbanBikeController::saveBikes() {}
 
 void UrbanBikeController::loadBikes() {}

@@ -19,8 +19,6 @@ void ElectricBikeController::findBike(std::string id) {}
 
 void ElectricBikeController::deleteBike(std::string id) {}
 
-std::string getElectricBikesById(std::string) {}
-
 void ElectricBikeController::loadBikes() {}
 
 void ElectricBikeController::saveBikes() {}
