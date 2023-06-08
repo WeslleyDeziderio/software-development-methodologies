@@ -1,10 +1,17 @@
 PROJ_NAME=crud
 
 #.hpp files
+<<<<<<< HEAD
 HPP_SOURCE=$(wildcard ./include/*.hpp ./include/utils/*.hpp ./include/exception/*.hpp ./include/model/*.hpp ./include/view/*.hpp ./include/controller/*.hpp ./include/factories/*.hpp ./include/factories/Bikes/*.hpp)
 
 # .cpp files
 CPP_SOURCE=$(wildcard ./src/*.cpp ./src/utils/*.cpp ./src/exception/*.cpp ./src/model/*.cpp ./src/view/*.cpp ./src/controller/*.cpp ./src/factories/*.cpp ./src/factories/Bikes/*.cpp )
+=======
+HPP_SOURCE=$(wildcard ./include/*.hpp ./include/utils/*.hpp ./include/exception/*.hpp ./include/model/*.hpp ./include/view/*.hpp ./include/controller/*.hpp ./include/factories/*.hpp ./src/factories/Users/*.hpp ./src/factories/Bikes/*.hpp)
+
+# .cpp files
+CPP_SOURCE=$(wildcard ./src/*.cpp ./src/utils/*.cpp ./src/exception/*.cpp ./src/model/*.cpp ./src/view/*.cpp ./src/controller/*.cpp ./src/factories/*.cpp ./src/factories/Users/*.cpp ./src/factories/Bikes/*.cpp)
+>>>>>>> cde78169ceab9a2b7c080798c952632800adbc7e
 
 
 # Object files

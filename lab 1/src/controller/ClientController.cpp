@@ -1,5 +1,5 @@
 #include "../../include/controller/ClientController.hpp"
-#include "../../include/factories/ClientModelFactory.hpp"
+#include "../../include/factories/Users/ClientModelFactory.hpp"
 #include <fstream>
 #include <sstream>
 
