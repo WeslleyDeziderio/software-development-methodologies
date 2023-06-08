@@ -6,8 +6,9 @@
 
 class MountainBike : public Bike {
 public:
-    void Create();
-    friend class Bike;
+    MountainBike();
+    MountainBike(std::string type, double price);
+    virtual ~MountainBike();
 };
 
 #endif // MOUNTAINBIKE_CPP

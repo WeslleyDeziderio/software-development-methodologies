@@ -4,24 +4,27 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <unordered_map>
 
 #include "../model/Bike.hpp"
 #include "../model/UrbanBike.hpp"
 #include "../model/MountainBike.hpp"
 
+class Bike;
 class BikeController {
-private:
-    Bike* ptrBike;
+protected:
+    std::unordered_map<std::string, Bike*> bikeMap;
+    static int nextId;
+
 public:
     BikeController();
     virtual ~BikeController();
-    void putBikeIds();
-    void registBike(std::string type);
-    void findBike();
-    void editBike();
-    void deleteBike();  
-    void listAllBikes();    
-
+    virtual void registerBike(std::string type);
+    virtual void putBikeIds();
+    virtual void findBike(std::string id);
+    virtual void editBike(std::string id, double newPrice);
+    virtual void deleteBike(std::string id);  
+    virtual void listAllBikes();    
 };
 
-#endif
+#endif // BIKECONTROLLER_HPP

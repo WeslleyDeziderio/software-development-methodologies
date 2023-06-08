@@ -25,7 +25,7 @@ public:
     FacadeController();
     static FacadeController* getInstance();
 
-    void registBike();
+    void registerBike();
     void registerManager(std::unordered_map<std::string, std::string> auxMap);
 
     void registerClient(std::unordered_map<std::string, std::string> auxMap);

@@ -2,18 +2,14 @@
 
 Bike::Bike() {}
 
-Bike::~Bike() {
-    delete this;
-}
-
-void Bike::Rent() {}
-
-Bike::Bike(std::string& type, double price){
+Bike::Bike(std::string type, double price){
     setBikePrice(price);
     setBikeType(type);
 }
 
-void Bike::setBikeType(std::string& type){
+Bike::~Bike() {}
+
+void Bike::setBikeType(std::string type){
     this->type=type;
 }
 
@@ -27,4 +23,12 @@ std::string Bike::getBikeType(){
 
 double Bike::getBikePrice(){
     return price;
+}
+
+void Bike::setId(int id) {
+    this->id = id;
+}
+
+int Bike::getId() {
+    return id;
 }

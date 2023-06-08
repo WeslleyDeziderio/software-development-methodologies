@@ -6,8 +6,9 @@
 
 class ElectricBike : public Bike {
 public:
-    void Create();
-    friend class Bike;
+    ElectricBike();
+    ElectricBike(std::string type, double price);
+    virtual ~ElectricBike();
 };
 
 #endif // ELECTRICBIKE_HPP
