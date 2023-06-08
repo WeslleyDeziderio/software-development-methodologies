@@ -12,11 +12,12 @@ public:
     void findUser(std::string login) override;
     void saveUsers() override;
     void loadUsers() override;
-    void createEstablisment();
-    void retrieveEstablishment();
-    void deleteEstablisment();
-    void updateEstablishment();
+    void updateEstablishment(std::string login, std::string newEstablishment);
+    void updateCnpj(std::string login, std::string newCnpj);
+    void updateLogin(std::string login, std::string newLogin);
+    void updatePassword(std::string login, std::string newPassword);
     void listAllManagers();
+    void listAllManagersOrdered();
 };
 
 #endif // MANAGERCONTROLLER_HPP

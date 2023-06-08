@@ -2,6 +2,7 @@
 #include "../../include/factories/Users/ManagerModelFactory.hpp"
 #include <fstream>
 #include <sstream>
+#include <map>
 
 ManagerController::ManagerController(){
     loadUsers();
@@ -11,20 +12,130 @@ ManagerController::~ManagerController(){
 
 }
 
-void ManagerController::createEstablisment(){
 
+
+void ManagerController::updateEstablishment(std::string login, std::string newEstablishment){
+    try{
+        
+        auto it = this->usersMap.find(login);
+        if( it != usersMap.end() ){
+        auto it = this->usersMap.find(login);
+
+            if( it != usersMap.end() ){
+                User& user = *it->second;
+                Manager* manager = dynamic_cast<Manager*>(&user);
+                manager->setEstablishment(newEstablishment);
+                std::cout << "Estabelecimento atualizado com sucesso!" << std::endl;
+
+            }else{
+                throw std::runtime_error("Gerente não encontrado.");
+            }
+        }
+    }
+    catch(std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
+    }
 }
 
-void ManagerController::retrieveEstablishment(){
+void ManagerController::updateCnpj(std::string login, std::string newCnpj){
+    try{
+        
+        auto it = this->usersMap.find(login);
+        if( it != usersMap.end() ){
+        auto it = this->usersMap.find(login);
 
+            if( it != usersMap.end() ){
+                User& user = *it->second;
+                Manager* manager = dynamic_cast<Manager*>(&user);
+                manager->setCnpjCode(newCnpj);
+                std::cout << "CNPJ atualizado com sucesso!" << std::endl;
+
+            }else{
+                throw std::runtime_error("Gerente não encontrado.");
+            }
+        }
+    }
+    catch(std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
+    }
 }
 
-void ManagerController::updateEstablishment(){
+void ManagerController::updateLogin(std::string login, std::string newLogin){
+    try{
+        
+        auto it = this->usersMap.find(login);
+        if( it != usersMap.end() ){
+        auto it = this->usersMap.find(login);
 
+            if( it != usersMap.end() ){
+                User& user = *it->second;
+                Manager* manager = dynamic_cast<Manager*>(&user);
+
+                try {
+                    manager->validateUsername(newLogin);
+                }
+                catch (InvalidLoginException& e) {
+                    std::cerr << "Erro: " << e.what() << std::endl;
+                    system("read -p '\n\n\n\nPress enter to continue.' var");
+                    return;
+
+                }
+                catch (...) {
+                    std::cerr << "Erro: " << std::endl;
+                    system("read -p '\n\n\n\nPress enter to continue.' var");
+                    return;
+                }
+
+                manager->setLogin(newLogin);
+                std::cout << "Login atualizado com sucesso!" << std::endl;
+
+            }else{
+                throw std::runtime_error("Gerente não encontrado.");
+            }
+        }
+    }
+    catch(std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
+    }
 }
 
-void ManagerController::deleteEstablisment(){
+void ManagerController::updatePassword(std::string login, std::string newPassword){
+    try{
+        
+        auto it = this->usersMap.find(login);
+        if( it != usersMap.end() ){
+        auto it = this->usersMap.find(login);
 
+            if( it != usersMap.end() ){
+                User& user = *it->second;
+                Manager* manager = dynamic_cast<Manager*>(&user);
+
+                try {
+                    manager->validatePassword(newPassword);
+                }
+                catch (InvalidPasswordException& e) {
+                    std::cerr << "Erro: " << e.what() << std::endl;
+                    system("read -p '\n\n\n\nPress enter to continue.' var");
+                    return;
+
+                }
+                catch (...) {
+                    std::cerr << "Erro: " << std::endl;
+                    system("read -p '\n\n\n\nPress enter to continue.' var");
+                    return;
+
+                }
+
+                manager->setPassword(newPassword);
+                std::cout << "Senha atualizada com sucesso!" << std::endl;
+            }else{
+                throw std::runtime_error("Gerente não encontrado.");
+            }
+        }
+    }
+    catch(std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
+    }
 }
 
 void ManagerController::registerUser(std::unordered_map<std::string, std::string> auxMap){
@@ -66,20 +177,20 @@ void ManagerController::registerUser(std::unordered_map<std::string, std::string
 }
 
 void ManagerController::findUser(std::string login){
-        try{
+    try{
 
-            for (auto pair : this->usersMap) {
-                std::string key = pair.first;
-                User* user = pair.second;
-                
-                if(user->getLogin() == login){
-                    if (Manager* manager = dynamic_cast<Manager*>(user)) {
-                        std::cout << "Gerente - " << "Login: " << manager->getLogin() << "\tPassword: " << manager->getPassword() << std::endl;
-                        return;
-                    }
+        for (auto pair : this->usersMap) {
+            std::string key = pair.first;
+            User* user = pair.second;
+            
+            if(user->getLogin() == login){
+                if (Manager* manager = dynamic_cast<Manager*>(user)) {
+                    std::cout << "Gerente - " << "Login: " << manager->getLogin() << "\tPassword: " << manager->getPassword() << std::endl;
+                    return;
                 }
             }
-            throw std::runtime_error("Gerente não encontrado.");
+        }
+        throw std::runtime_error("Gerente não encontrado.");
 
     }
     catch(std::exception& e){
@@ -112,6 +223,35 @@ void ManagerController::listAllManagers(){
     }
 
 }
+
+void ManagerController::listAllManagersOrdered(){
+
+    try{
+        
+        bool hasManager = false;
+
+        std::map<std::string, User*> sortedMap(this->usersMap.begin(), this->usersMap.end());
+        for (auto pair : sortedMap) {
+            std::string key = pair.first;
+            User* user = pair.second;
+            
+            if(Manager* manager = dynamic_cast<Manager*>(user)) {
+                hasManager = true;
+                std::cout << "Gerente - " << "Login: " << manager->getLogin() << "\tPassword: " << manager->getPassword() 
+                << "\tEstablishment: " << manager->getEstablishment() << "\tcnpjCode: " << manager->getCnpjCode() << std::endl;
+            }
+        }
+        if(!hasManager){
+            throw std::runtime_error("Não existem gerentes cadastrados.");
+        }
+        
+    }
+    catch(std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
+
+    }
+}
+
 
 void ManagerController::saveUsers(){
         try{

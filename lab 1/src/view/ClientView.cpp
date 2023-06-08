@@ -1,4 +1,5 @@
 #include "../../include/view/ClientView.hpp"
+#include "../../include/controller/FrontController.hpp"
 #include "../../include/controller/FacadeController.hpp"
 
 inline void ClientView::showMenu(){
@@ -27,7 +28,7 @@ inline void ClientView::showMenu(){
                 editMenu();
                 break;
             case 3:
-                // facade_instance.listAllClients();
+                // front_instance.listAllClients();
                 break;
             case 4:
                 saveMenu();
@@ -62,14 +63,14 @@ void ClientView::registrationMenu(){
     auxMap.insert(std::make_pair("password", clientPass));
     auxMap.insert(std::make_pair("plan", clientPlan));
 
-    this->facade_instance.registerClient(auxMap);
+    this->front_instance.registerClient(auxMap);
 }
 
 void ClientView::editMenu(){
 
     system("clear");
     std::string login, newLogin, newPassword = "", newPlan = "";
-    std::cout << "Insira o login do usuário que deseja editar: ";
+    std::cout << "Insira o seu login: ";
     std::cin >> login;
 
     std::cout << "Insira o novo login: ";
@@ -81,10 +82,10 @@ void ClientView::editMenu(){
     std::cout << "Insira o novo plano: ";
     std::cin >> newPlan;
 
-    facade_instance.editClient(login, newLogin, newPassword, newPlan);
+    front_instance.editClient(login, newLogin, newPassword, newPlan);
 
 }
 
 void ClientView::saveMenu(){
-    facade_instance.saveClients();
+    front_instance.saveClients();
 }

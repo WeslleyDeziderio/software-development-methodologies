@@ -2,11 +2,11 @@
 #define USERVIEWTEMPLATE_HPP
 
 #include "../../include/controller/UserController.hpp"
-#include "../../include/controller/FacadeController.hpp"
+#include "../../include/controller/FrontController.hpp"
 
 class UserViewTemplate{
 protected:
-    FacadeController facade_instance;
+    FrontController front_instance;
 public:
     virtual void showMenu();
     virtual void registrationMenu();
