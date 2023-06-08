@@ -13,8 +13,8 @@ UserValidator::UserValidator() {}
 UserValidator::~UserValidator() {}
 
 void UserValidator::validateUsername(std::string usr) {
-    if (static_cast<int>(usr.length()) > TAMANHO_MAXIMO_LOGIN) {
-        std::cout << "\nO login deve possuir até 20(vinte) caracteres!" << std::endl;
+    if (static_cast<int>(usr.length()) >= TAMANHO_MAXIMO_LOGIN) {
+        std::cout << "\nO login deve possuir até 12(doze) caracteres!" << std::endl;
         throw InvalidLoginException();
     } else if (usr.empty()) {
         std::cout << "\nO login não pode ser vazio!" << std::endl;
@@ -38,15 +38,15 @@ int UserValidator::countNumbers(std::string pass) {
 }
 
 void UserValidator::validatePassword(std::string pass) {
-    if (pass.length() < TAMANHO_MINIMO_SENHA) {
+    if (pass.length() <= TAMANHO_MINIMO_SENHA) {
         std::cout << "\nA senha deve possuir pelo menos 8(oito) caracteres!" << std::endl;
         throw InvalidPasswordException();
     }
-    else if (pass.length() > TAMANHO_MAXIMO_SENHA) {
-        std::cout << "\nA senha deve possuir até 12(doze) caracteres!" << std::endl;
+    else if (pass.length() >= TAMANHO_MAXIMO_SENHA) {
+        std::cout << "\nA senha deve possuir até 20(vinte) caracteres!" << std::endl;
         throw InvalidPasswordException();
     }
-    else if (countNumbers(pass) < QTD_MINIMA_NUMEROS) {
+    else if (countNumbers(pass) <= QTD_MINIMA_NUMEROS) {
         std::cout << "\nA senha deve conter pelo menos 2(dois) números!" << std::endl;
         throw InvalidPasswordException();
     }
