@@ -38,12 +38,4 @@ void BikeController::listAllBikes() {}
 
 void BikeController::saveBikes() {}
 
-<<<<<<< HEAD
 void BikeController::loadBikes() {}
-=======
-}
-
-void BikeController::putBikeIds() {
-
-}
->>>>>>> cde78169ceab9a2b7c080798c952632800adbc7e
