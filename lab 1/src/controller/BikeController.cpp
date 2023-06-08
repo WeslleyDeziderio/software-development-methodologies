@@ -42,3 +42,7 @@ void BikeController::editBike(std::string id, double newPrice) {
 void BikeController::listAllBikes() {
 
 }
+
+void BikeController::putBikeIds() {
+
+}
