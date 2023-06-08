@@ -5,9 +5,7 @@ BikeController::BikeController() {}
 
 BikeController::~BikeController() {}
 
-void BikeController::registerBike(std::string type){
-
-}
+void BikeController::registerBike(std::unordered_map<std::string, double> a) {}
 
 void BikeController::deleteBike(std::string id) {
     auto it = bikeMap.find(id);
@@ -34,11 +32,10 @@ void BikeController::findBike(std::string id) {
     // }
 }
 
-void BikeController::editBike(std::string id, double newPrice) {
+void BikeController::editBike(std::string id, double newPrice) {}
 
-}
+void BikeController::listAllBikes() {}
 
+void BikeController::saveBikes() {}
 
-void BikeController::listAllBikes() {
-
-}
+void BikeController::loadBikes() {}

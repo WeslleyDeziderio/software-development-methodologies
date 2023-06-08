@@ -7,7 +7,7 @@
 class ElectricBike : public Bike {
 public:
     ElectricBike();
-    ElectricBike(std::string type, double price);
+    ElectricBike(std::string id, double price);
     virtual ~ElectricBike();
 };
 

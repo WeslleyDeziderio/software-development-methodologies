@@ -5,19 +5,16 @@
 #include <string>
 class Bike {
 private:
-    std::string type;
     double price;
-    int id;
+    std::string id;
 public: 
     Bike();
-    Bike(std::string type, double price);
+    Bike(double price, std::string id);
     virtual ~Bike();
-    void setBikeType(std::string type);
-    std:: string getBikeType();
     void setBikePrice(double price);
     double getBikePrice();
-    void setId(int id);
-    int getId();
+    void setId(std::string id);
+    std::string getId();
 };
 
 #endif // BIKE_HPP

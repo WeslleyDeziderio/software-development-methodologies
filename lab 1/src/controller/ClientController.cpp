@@ -13,7 +13,6 @@ ClientController::~ClientController(){
 }
 
 void ClientController::registerUser(std::unordered_map<std::string, std::string> auxMap){
-    
     UserModelFactory* modelFactory = new ClientModelFactory();
     User* a = modelFactory->createUser(auxMap);
     try {

@@ -2,9 +2,9 @@
 
 ElectricBike::ElectricBike() {}
 
-ElectricBike::ElectricBike(std::string type, double price) {
-    setBikeType(type);
+ElectricBike::ElectricBike(std::string id,  double price) {
     setBikePrice(price);
+    setId(id);
 }
 
 ElectricBike::~ElectricBike() {}

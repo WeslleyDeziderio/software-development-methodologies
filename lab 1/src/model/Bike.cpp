@@ -2,33 +2,26 @@
 
 Bike::Bike() {}
 
-Bike::Bike(std::string type, double price){
+Bike::Bike(double price, std::string id){
     setBikePrice(price);
-    setBikeType(type);
+    setId(id);
 }
 
 Bike::~Bike() {}
 
-void Bike::setBikeType(std::string type){
-    this->type=type;
-}
 
 void Bike::setBikePrice(double price){
     this->price=price;
-}
-
-std::string Bike::getBikeType(){
-    return type;
 }
 
 double Bike::getBikePrice(){
     return price;
 }
 
-void Bike::setId(int id) {
+void Bike::setId(std::string id) {
     this->id = id;
 }
 
-int Bike::getId() {
+std::string Bike::getId() {
     return id;
 }

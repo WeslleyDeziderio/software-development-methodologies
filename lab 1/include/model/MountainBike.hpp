@@ -7,7 +7,7 @@
 class MountainBike : public Bike {
 public:
     MountainBike();
-    MountainBike(std::string type, double price);
+    MountainBike(std::string id, double price);
     virtual ~MountainBike();
 };
 

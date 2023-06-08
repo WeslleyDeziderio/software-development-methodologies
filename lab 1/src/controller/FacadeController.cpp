@@ -81,7 +81,7 @@ void FacadeController::registerManager(std::unordered_map<std::string, std::stri
 }
 
 void FacadeController::registerBike() {
-    std::string aux;
+    std::unordered_map<std::string, double> aux;
     this->bikeController_->registerBike(aux);
 }
 
