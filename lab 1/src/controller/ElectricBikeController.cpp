@@ -1,5 +1,5 @@
 #include "../../include/controller/ElectricBikeController.hpp"
-#include "../../include/factories/Bikes/ElectricBikeModelFactory.hpp"
+#include "../../include/model/factories/Bikes/ElectricBikeModelFactory.hpp"
 
 #include <fstream>
 #include <sstream>

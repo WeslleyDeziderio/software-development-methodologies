@@ -1,7 +1,7 @@
 #ifndef ELECTRICBIKEMODELFACTORY_HPP
 #define ELECTRICBIKEMODELFACTORY_HPP
 
-#include "../../../include/model/ElectricBike.hpp"
+#include "../../../model/ElectricBike.hpp"
 #include "BikeModelFactory.hpp"
 
 class ElectricBikeModelFactory : public BikeModelFactory {

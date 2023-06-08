@@ -1,7 +1,7 @@
 #ifndef CLIENTMODELFACTORY_HPP
 #define CLIENTMODELFACTORY_HPP
 
-#include "../../../include/model/Client.hpp"
+#include "../../../model/Client.hpp"
 #include "UserModelFactory.hpp"
 
 class ClientModelFactory : public UserModelFactory {

@@ -1,5 +1,4 @@
-#include "../../../include/factories/Bikes/ElectricBikeModelFactory.hpp"
-
+#include "../../../../include/model/factories/Bikes/ElectricBikeModelFactory.hpp"
 
 ElectricBikeModelFactory::ElectricBikeModelFactory() {}
 

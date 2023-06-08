@@ -1,5 +1,5 @@
 #include "../../include/controller/MountainBikeController.hpp"
-#include "../../include/factories/Bikes/MountainBikeModelFactory.hpp"
+#include "../../include/model/factories/Bikes/MountainBikeModelFactory.hpp"
 
 #include <fstream>
 #include <sstream>

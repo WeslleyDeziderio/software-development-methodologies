@@ -1,7 +1,7 @@
 #ifndef MOUNTAINBIKEMODELFACTORY_HPP
 #define MOUNTAINBIKEMODELFACTORY_HPP
 
-#include "../../../include/model/MountainBike.hpp"
+#include "../../../model/MountainBike.hpp"
 #include "BikeModelFactory.hpp"
 
 class MountainBikeModelFactory : public BikeModelFactory {

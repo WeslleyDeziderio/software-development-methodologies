@@ -1,7 +1,7 @@
 #ifndef USERMODELFACTORY_HPP
 #define USERMODELFACTORY_HPP
 
-#include "../../../include/model/User.hpp"
+#include "../../../model/User.hpp"
 #include <unordered_map>
 class UserModelFactory {
 private:
