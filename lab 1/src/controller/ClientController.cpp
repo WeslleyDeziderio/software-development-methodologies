@@ -2,6 +2,7 @@
 #include "../../include/factories/Users/ClientModelFactory.hpp"
 #include <fstream>
 #include <sstream>
+#include <map>
 
 ClientController::ClientController(){
     this->loadUsers();
@@ -108,6 +109,33 @@ void ClientController::listAllClients(){
         
         bool hasClient = false;
         for (auto pair : this->usersMap) {
+            std::string key = pair.first;
+            User* user = pair.second;
+            
+            if (Client* client = dynamic_cast<Client*>(user)) {
+                hasClient = true;
+                std::cout << "Cliente - " << "Login: " << client->getLogin() << "\tPassword: " << client->getPassword() << "\t Plano: "<< client->getTipoPlano() <<std::endl;
+            }
+        }
+        if(!hasClient){
+            throw std::runtime_error("Não existem clientes cadastrados.");
+        }
+        
+    }
+    catch(std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
+
+    }
+}
+
+void ClientController::listAllClientsOrdered(){
+
+    try{
+        
+        bool hasClient = false;
+
+        std::map<std::string, User*> sortedMap(this->usersMap.begin(), this->usersMap.end());
+        for (auto pair : sortedMap) {
             std::string key = pair.first;
             User* user = pair.second;
             

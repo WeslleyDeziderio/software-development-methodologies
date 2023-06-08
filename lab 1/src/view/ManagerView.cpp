@@ -112,8 +112,8 @@ void ManagerView::deleteMenu(){
     
     std::string user_name;
     int escolha = 0;
-    std::cout << "Cadastrar cliente - 1\n"
-              << "Cadastrar gerente - 2"
+    std::cout << "Deletar cliente - 1\n"
+              << "Deletar gerente - 2"
               << std::endl;
     std::cin >> escolha;
 
@@ -144,4 +144,10 @@ void ManagerView::editMenu(){
 void ManagerView::saveMenu(){
     this->facade_instance.saveClients();   
     this->facade_instance.saveManagers();
+}
+
+void ManagerView::listAllMenu(){
+    this->facade_instance.listAllClientsOrdered();
+    // std::cout << "Gerentes:" << std::endl;
+    // this->facade_instance.listAllManagersOrdered();
 }

@@ -10,6 +10,7 @@ public:
     void registrationMenu() override;
     void deleteMenu() override;
     void saveMenu() override;
+    void listAllMenu() override;
     
 };
 

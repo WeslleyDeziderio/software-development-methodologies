@@ -39,6 +39,7 @@ public:
 
     void listAllBikes();
     void listAllUsers();
+    void listAllClientsOrdered();
 
     void saveClients();
     void saveManagers();

@@ -98,3 +98,10 @@ void FacadeController::saveManagers(){
     this->managerController_->saveUsers();
     system("read -p '\n\n\n\nPress enter to continue.' var");
 }
+
+void FacadeController::listAllClientsOrdered(){
+    system("clear");
+    this->clientController_->listAllClientsOrdered();
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+    system("clear");
+}

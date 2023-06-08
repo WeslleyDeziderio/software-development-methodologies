@@ -22,6 +22,5 @@ void UserViewTemplate::findMenu(){
 }
 
 void UserViewTemplate::listAllMenu(){
-    system("clear");
-    this->facade_instance.listAllUsers();
+
 }
