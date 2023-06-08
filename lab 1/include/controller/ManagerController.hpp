@@ -10,6 +10,8 @@ public:
     ~ManagerController();
     void registerUser(std::unordered_map<std::string, std::string> auxMap) override;
     void findUser(std::string login) override;
+    void saveUsers() override;
+    void loadUsers() override;
     void createEstablisment();
     void retrieveEstablishment();
     void deleteEstablisment();

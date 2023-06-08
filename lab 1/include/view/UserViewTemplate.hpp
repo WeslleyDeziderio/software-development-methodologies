@@ -14,6 +14,7 @@ public:
     virtual void deleteMenu();
     virtual void findMenu();
     virtual void listAllMenu();
+    virtual void saveMenu() = 0;
 };
 
 #endif 

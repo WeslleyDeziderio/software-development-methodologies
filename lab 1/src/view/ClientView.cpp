@@ -8,8 +8,9 @@ inline void ClientView::showMenu(){
     while (flag) {
         std::cout << "\nCadastrar cliente - 1\n"  
                   << "Editar cliente - 2\n"
-                  << "Listar clientes - 3\n"     
-                  << "Sair - 4" 
+                  << "Listar clientes - 3\n"
+                  << "Salvar alterações - 4\n"     
+                  << "Sair - 5" 
                   << std::endl;
         
         while (!(std::cin >> escolha)) {
@@ -29,6 +30,9 @@ inline void ClientView::showMenu(){
                 // facade_instance.listAllClients();
                 break;
             case 4:
+                saveMenu();
+                break;
+            case 5:
                 flag = false;
                 break;
             default:
@@ -79,4 +83,8 @@ void ClientView::editMenu(){
 
     facade_instance.editClient(login, newLogin, newPassword, newPlan);
 
+}
+
+void ClientView::saveMenu(){
+    facade_instance.saveClients();
 }

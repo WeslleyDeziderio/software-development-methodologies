@@ -172,3 +172,11 @@ void UserController::editPassword(std::string login, std::string newPassword){
 
 }
 
+void UserController::saveUsers(){
+
+}
+
+void UserController::loadUsers(){
+
+}
+

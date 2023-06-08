@@ -39,6 +39,9 @@ public:
 
     void listAllBikes();
     void listAllUsers();
+
+    void saveClients();
+    void saveManagers();
     
 };
 #endif //  FacadeController_HPP

@@ -88,3 +88,13 @@ void FacadeController::registBike() {
 void FacadeController::listAllBikes() {
 
 }
+
+void FacadeController::saveClients(){
+    this->clientController_->saveUsers();
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+}
+
+void FacadeController::saveManagers(){
+    this->managerController_->saveUsers();
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+}

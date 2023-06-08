@@ -9,6 +9,7 @@ public:
     void showMenu() override;
     void registrationMenu() override;
     void editMenu() override;
+    void saveMenu() override;
 };
 
 

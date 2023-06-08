@@ -26,7 +26,8 @@ public:
     virtual void editPassword(std::string login, std::string newPassword);
     virtual void findUser(std::string login);
     virtual void deleteUser(std::string login);
-    
+    virtual void saveUsers();
+    virtual void loadUsers();    
 };
 
 #endif //  USERCONTROLLER_HPP

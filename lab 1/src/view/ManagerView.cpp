@@ -9,8 +9,9 @@ inline void ManagerView::showMenu(){
                   << "Procurar usuário - 2\n" 
                   << "Listar usuários - 3\n" 
                   << "Editar usuário - 4\n"
-                  << "Deletar usuário - 5\n"    
-                  << "Sair - 6" 
+                  << "Deletar usuário - 5\n"
+                  << "Salvar operações - 6\n"    
+                  << "Sair - 7" 
                   << std::endl;
         
         while (!(std::cin >> escolha)) {
@@ -36,6 +37,9 @@ inline void ManagerView::showMenu(){
                 deleteMenu();
                 break;
             case 6:
+                saveMenu();
+                break;
+            case 7:
                 flag = false;
                 break;
             default:
@@ -135,4 +139,9 @@ void ManagerView::deleteMenu(){
 
 void ManagerView::editMenu(){
     
+}
+
+void ManagerView::saveMenu(){
+    this->facade_instance.saveClients();   
+    this->facade_instance.saveManagers();
 }
