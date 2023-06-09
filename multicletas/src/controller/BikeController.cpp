@@ -24,15 +24,54 @@ void BikeController::deleteBike(std::string id) {
 }
 
 void BikeController::findBike(std::string id) {
-    // int nextId = 1;
-    // for (auto& pair : bikeMap) {
-    //     Bike& bikePtr = pair.second;
-    //     bikePtr->setId(nextId);
-    //     nextId++;
-    // }
+    try {
+        for (auto pair : this->bikeMap) {
+            std::string key = pair.first;
+            Bike* bike = pair.second;
+            
+            if(bike->getId() == id){
+                if (Bike* bike = dynamic_cast<Bike*>(bike)) {
+                    std::cout << "Bicicleta - " << "ID: " << bike->getId() << std::endl;
+
+                    return;
+                }
+            }
+        }
+        throw std::runtime_error("Cliente não encontrado.");
+
+        }
+        catch(std::exception& e){
+          std::cout << "Error: " << e.what() << std::endl;
+    }
 }
 
-void BikeController::editBike(std::string id, double newPrice) {}
+void BikeController::editBike(std::string id, double newPrice) {
+      try{
+        if (bikeMap.empty()) {
+            throw std::runtime_error("Não existem bicicletas cadastradas.");
+        } else {
+            auto it = this->bikeMap.find(id);
+
+            if( it != bikeMap.end() ){
+                Bike* bike = it->second;
+
+                this->bikeMap.erase(it);
+
+                bike->setId(id);
+                bike->setBikePrice(newPrice);  
+                
+                std::cout << "Bicicleta editada."  << std::endl;
+            }else{
+                throw std::runtime_error("Bicicleta não encontrada.");
+            }
+        }
+    }
+    catch(std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
+
+    }
+
+}
 
 void BikeController::listAllBikes() {}
 

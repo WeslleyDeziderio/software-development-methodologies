@@ -15,6 +15,7 @@ public:
     void deleteBike(std::string id) override;
     void saveBikes() override;
     void loadBikes() override;
+    std::string createElectricBikeId();
 };
 
 #endif // ELECTRICBIKECONTROLLER_HPP

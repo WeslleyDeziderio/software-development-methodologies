@@ -13,6 +13,7 @@ public:
     void findBike(std::string id) override;
     void editBike(std::string id, double newPrice) override;
     void deleteBike(std::string id) override;
+    std::string createMountainBikeIds();
     void saveBikes() override;
     void loadBikes() override;
 };
