@@ -24,3 +24,7 @@ void UserViewTemplate::findMenu(){
 void UserViewTemplate::listAllMenu(){
 
 }
+
+void UserViewTemplate::saveMenu(){
+
+}
