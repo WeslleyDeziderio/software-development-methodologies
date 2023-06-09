@@ -74,7 +74,7 @@ void ClientController::findUser(std::string login){
     }
 }
 
-void ClientController::editPlan(std::string login, std::string newPlan){
+void ClientController::updatePlan(std::string login, std::string newPlan){
     try{
         
         auto it = this->usersMap.find(login);

@@ -19,14 +19,6 @@ FrontController* FrontController::getInstance() {
     return instance;
 }
 
-void FrontController::editClient(std::string login, std::string newLogin, std::string newPassword, std::string newPlan) {
-    system("clear");
-    this->clientController_->editUser(login, newLogin, newPassword);
-    this->clientController_->editPlan(login, newPlan);
-    system("read -p '\n\n\n\nPress enter to continue.' var");
-    system("clear");
-}
-
 void FrontController::deleteClient(std::string login) {
     system("clear");
     this->clientController_->deleteUser(login);
@@ -126,3 +118,20 @@ void FrontController::updateManagersCnpj(std::string login, std::string newCnpj)
     system("read -p '\n\n\n\nPress enter to continue.' var");
 }
 
+void FrontController::updateClientsLogin(std::string login, std::string newLogin){
+    system("clear");
+    this->clientController_->updateLogin(login, newLogin);
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+}
+
+void FrontController::updateClientsPassword(std::string login, std::string newPassword){
+    system("clear");
+    this->clientController_->updatePassword(login, newPassword);
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+}
+
+void FrontController::updateClientsPlan(std::string login, std::string newPlan){
+    system("clear");
+    this->clientController_->updatePlan(login, newPlan);
+    system("read -p '\n\n\n\nPress enter to continue.' var");
+}

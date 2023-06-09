@@ -21,9 +21,9 @@ public:
     UserController();
     virtual ~UserController();
     virtual void deleteUser(std::string login);
-    virtual void editUser(std::string login, std::string newLogin, std::string newPassword);
-    virtual void editLogin(std::string login, std::string newLogin);
-    virtual void editPassword(std::string login, std::string newPassword);
+    virtual void updateUser(std::string login, std::string newLogin, std::string newPassword);
+    virtual void updateLogin(std::string login, std::string newLogin);
+    virtual void updatePassword(std::string login, std::string newPassword);
     virtual void findUser(std::string login);
     virtual void loadUsers();    
     virtual void registerUser(std::unordered_map<std::string, std::string> auxMap);

@@ -13,7 +13,7 @@ public:
     ClientController();
     virtual ~ClientController();
     void findUser(std::string login) override;
-    void editPlan(std::string login, std::string newPlan);
+    void updatePlan(std::string login, std::string newPlan);
     void listAllClients();
     void listAllClientsOrdered();
     void loadUsers() override;

@@ -26,9 +26,7 @@ public:
 
     void registerBike();
     void registerManager(std::unordered_map<std::string, std::string> auxMap);
-
     void registerClient(std::unordered_map<std::string, std::string> auxMap);
-    void editClient(std::string login, std::string newLogin, std::string newPassword, std::string newPlan);
 
     void deleteClient(std::string login);
     void deleteManager(std::string login);
@@ -46,7 +44,10 @@ public:
     void updateManagersPassword(std::string login, std::string newPassword);
     void updateManagersEstablishment(std::string login, std::string newEstablishment);
     void updateManagersCnpj(std::string login, std::string newCnpj);
-    
+
+    void updateClientsLogin(std::string login, std::string newLogin);
+    void updateClientsPassword(std::string login, std::string newPassword);
+    void updateClientsPlan(std::string login, std::string newPlan);
     
 };
 #endif //  FrontController_HPP

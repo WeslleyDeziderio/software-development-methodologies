@@ -14,8 +14,6 @@ public:
     void loadUsers() override;
     void updateEstablishment(std::string login, std::string newEstablishment);
     void updateCnpj(std::string login, std::string newCnpj);
-    void updateLogin(std::string login, std::string newLogin);
-    void updatePassword(std::string login, std::string newPassword);
     void listAllManagers();
     void listAllManagersOrdered();
 };

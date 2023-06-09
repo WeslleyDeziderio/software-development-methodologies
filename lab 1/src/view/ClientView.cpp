@@ -7,6 +7,7 @@ inline void ClientView::showMenu(){
     int escolha = 0;
     bool flag = true;
     while (flag) {
+        system("clear");
         std::cout << "\nCadastrar cliente - 1\n"  
                   << "Editar cliente - 2\n"
                   << "Listar clientes - 3\n"
@@ -69,20 +70,37 @@ void ClientView::registrationMenu(){
 void ClientView::editMenu(){
 
     system("clear");
+    int escolha = 0;
     std::string login, newLogin, newPassword = "", newPlan = "";
-    std::cout << "Insira o seu login: ";
-    std::cin >> login;
+    std::cout   << "Editar login - 1\n"
+                << "Editar senha - 2\n"
+                << "Editar plano - 3"
+                << std::endl;
+    std::cin >> escolha;
 
-    std::cout << "Insira o novo login: ";
-    std::cin >> newLogin;
-
-    std::cout << "Insira a nova senha: ";
-    std::cin >> newPassword;
-
-    std::cout << "Insira o novo plano: ";
-    std::cin >> newPlan;
-
-    front_instance.editClient(login, newLogin, newPassword, newPlan);
+    system("clear");
+    switch (escolha){
+    case 1:
+        std::cout << "Insira o novo login: ";
+        std::cin >> newLogin;
+        front_instance.updateClientsLogin(login, newLogin);
+        break;
+    case 2:
+        std::cout << "Insira o novo senha: ";
+        std::cin >> newPassword;
+        front_instance.updateClientsPassword(login, newPassword);
+    
+        break;
+    case 3:
+        std::cout << "Insira o novo plano: ";
+        std::cin >> newPlan;
+        front_instance.updateClientsPlan(login, newPlan);
+    
+        break;
+    default:
+        std::cout << "Entrada inválida." << std::endl;
+        break;
+    }
 
 }
 

@@ -31,7 +31,7 @@ void UserController::findUser(std::string login){
 
 }
 
-void UserController::editUser(std::string login, std::string newLogin, std::string newPassword){
+void UserController::updateUser(std::string login, std::string newLogin, std::string newPassword){
     try{
         if (usersMap.empty()) {
             throw std::runtime_error("Não existem usuários cadastrados.");
@@ -79,7 +79,7 @@ void UserController::editUser(std::string login, std::string newLogin, std::stri
                 
 
                 this->usersMap.insert(std::make_pair(newLogin, user));
-                std::cout << "Usuário editado."  << std::endl;
+                std::cout << "Usuário updateado."  << std::endl;
             }else{
                 throw std::runtime_error("Usuário não encontrado.");
             }
@@ -92,7 +92,7 @@ void UserController::editUser(std::string login, std::string newLogin, std::stri
 
 }
 
-void UserController::editLogin(std::string login, std::string newLogin){
+void UserController::updateLogin(std::string login, std::string newLogin){
     try{
         if (usersMap.empty()) {
             throw std::runtime_error("Não existem usuários cadastrados.");
@@ -120,7 +120,7 @@ void UserController::editLogin(std::string login, std::string newLogin){
                 this->usersMap.erase(it);
                 user->setLogin(newLogin);
                 this->usersMap.insert(std::make_pair(newLogin, user));
-                std::cout << "Login editado com sucesso."  << std::endl;
+                std::cout << "Login updateado com sucesso."  << std::endl;
             }else{
                 throw std::runtime_error("Usuário não encontrado.");
             }
@@ -133,7 +133,7 @@ void UserController::editLogin(std::string login, std::string newLogin){
 
 }
 
-void UserController::editPassword(std::string login, std::string newPassword){
+void UserController::updatePassword(std::string login, std::string newPassword){
     try{
         if (usersMap.empty()) {
             throw std::runtime_error("Não existem usuários cadastrados.");
@@ -159,7 +159,7 @@ void UserController::editPassword(std::string login, std::string newPassword){
 
                 }
                 user.setPassword(newPassword);
-                std::cout << "Senha editado com sucesso."  << std::endl;
+                std::cout << "Senha updateado com sucesso."  << std::endl;
             }else{
                 throw std::runtime_error("Usuário não encontrado.");
             }
