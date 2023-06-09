@@ -80,8 +80,8 @@ void FrontController::registerManager(std::unordered_map<std::string, std::strin
 }
 
 void FrontController::registerBike() {
-    std::string aux;
-    this->bikeController_->registerBike(aux);
+    // std::string aux;
+    // this->bikeController_->registerBike(aux);
 }
 
 void FrontController::saveClients(){

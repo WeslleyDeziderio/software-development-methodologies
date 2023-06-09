@@ -1,7 +1,7 @@
 #ifndef MANAGERMODELFACTORY_HPP
 #define MANAGERMODELFACTORY_HPP
 
-#include "../../../include/model/Manager.hpp"
+#include "../../../model/Manager.hpp"
 #include "UserModelFactory.hpp"
 
 class ManagerModelFactory : public UserModelFactory {

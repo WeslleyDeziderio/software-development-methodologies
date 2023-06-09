@@ -1,4 +1,4 @@
-#include "../../../include/factories/Bikes/BikeModelFactory.hpp"
+#include "../../../../include/model/factories/Bikes/BikeModelFactory.hpp"
 
 BikeModelFactory::BikeModelFactory() {}
 

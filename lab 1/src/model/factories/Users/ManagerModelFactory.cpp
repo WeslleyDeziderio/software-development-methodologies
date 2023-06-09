@@ -1,4 +1,4 @@
-#include "../../../include/factories/Users/ManagerModelFactory.hpp"
+#include "../../../../include/model/factories/Users/ManagerModelFactory.hpp"
 
 ManagerModelFactory::ManagerModelFactory() {
 }

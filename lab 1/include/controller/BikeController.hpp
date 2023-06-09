@@ -19,12 +19,13 @@ protected:
 public:
     BikeController();
     virtual ~BikeController();
-    virtual void registerBike(std::string type);
-    virtual void putBikeIds();
+    virtual void registerBike(std::unordered_map<std::string, double> a);
     virtual void findBike(std::string id);
     virtual void editBike(std::string id, double newPrice);
     virtual void deleteBike(std::string id);  
     virtual void listAllBikes();    
+    virtual void saveBikes();
+    virtual void loadBikes();
 };
 
 #endif // BIKECONTROLLER_HPP

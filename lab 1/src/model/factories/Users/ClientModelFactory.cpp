@@ -1,4 +1,4 @@
-#include "../../../include/factories/Users/ClientModelFactory.hpp"
+#include "../../../../include/model/factories/Users/ClientModelFactory.hpp"
 
 ClientModelFactory::ClientModelFactory() {
 }

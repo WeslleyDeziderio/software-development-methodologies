@@ -1,4 +1,4 @@
-#include "../../../include/factories/Users/UserModelFactory.hpp"
+#include "../../../../include/model/factories/Users/UserModelFactory.hpp"
 
 UserModelFactory::UserModelFactory() {
 }

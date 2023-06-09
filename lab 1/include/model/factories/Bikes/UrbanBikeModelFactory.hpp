@@ -1,7 +1,7 @@
 #ifndef URBANBIKEMODELFACTORY_HPP
 #define URBANBIKEMODELFACTORY_HPP
 
-#include "../../../include/model/UrbanBike.hpp"
+#include "../../../model/UrbanBike.hpp"
 #include "BikeModelFactory.hpp"
 
 class UrbanBikeModelFactory : public BikeModelFactory {

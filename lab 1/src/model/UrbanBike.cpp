@@ -2,8 +2,8 @@
 
 UrbanBike::UrbanBike() {};
 
-UrbanBike::UrbanBike(std::string type, double price) {
-    setBikeType(type);
+UrbanBike::UrbanBike(std::string id, double price) {
+    setId(id);
     setBikePrice(price);
 }
 

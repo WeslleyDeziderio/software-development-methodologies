@@ -1,7 +1,7 @@
 #ifndef BIKEMODELFACTORY_HPP
 #define BIKEMODELFACTORY_HPP
 
-#include "../../../include/model/Bike.hpp"
+#include "../../../model/Bike.hpp"
 #include <unordered_map>
 
 class BikeModelFactory {

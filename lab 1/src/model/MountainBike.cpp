@@ -2,8 +2,8 @@
 
 MountainBike::MountainBike() {}
 
-MountainBike::MountainBike(std::string type, double price) {
-    setBikeType(type);
+MountainBike::MountainBike(std::string id, double price) {
+    setId(id);
     setBikePrice(price);
 }
 
